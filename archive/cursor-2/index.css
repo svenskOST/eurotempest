@@ -1,0 +1,64 @@
+@import 'tailwindcss/preflight';
+@tailwind utilities;
+
+@layer base {
+   html {
+      scroll-behavior: smooth;
+   }
+
+   body {
+      @apply antialiased text-gray-900;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      @apply font-bold;
+   }
+}
+
+@layer components {
+   .btn {
+      @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+   }
+
+   .btn-outline {
+      @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+   }
+
+   .input {
+      @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm;
+   }
+}
+
+/* Slick carousel custom styles */
+.slick-dots {
+   @apply bottom-4;
+}
+
+.slick-dots li button:before {
+   @apply text-white opacity-50;
+}
+
+.slick-dots li.slick-active button:before {
+   @apply text-white opacity-100;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.animate-fadeIn {
+   animation: fadeIn 0.5s ease-out forwards;
+}
