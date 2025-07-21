@@ -1,146 +1,243 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import Placeholder from '../components/Placeholder'
+import Carousel from '../components/Carousel'
 
-const carouselItems = [
-   {
-      title: 'Weather Intelligence',
-      description: 'Providing critical weather data and analysis for the insurance industry',
-      image: <Placeholder height={600} text='Weather Intelligence' />,
-   },
-   {
-      title: 'Natural Catastrophe Services',
-      description: 'Expert analysis and reporting on natural catastrophe events',
-      image: <Placeholder height={600} text='Natural Catastrophe Services' />,
-   },
-   {
-      title: 'Insurance Solutions',
-      description: 'Tailored solutions for insurance companies across Europe',
-      image: <Placeholder height={600} text='Insurance Solutions' />,
-   },
-]
-
-const features = [
-   {
-      title: 'Weather Intelligence',
-      description: 'Real-time weather monitoring and forecasting for informed decision making',
-   },
-   {
-      title: 'Catastrophe Response',
-      description: 'Rapid response and analysis of natural catastrophe events',
-   },
-   {
-      title: 'Insurance Support',
-      description: 'Comprehensive support for insurance claims and risk assessment',
-   },
-]
-
-function Home() {
-   useEffect(() => {
-      window.scrollTo(0, 0)
-   }, [])
-
-   const sliderSettings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 5000,
-   }
-
+const Home = () => {
    return (
-      <div className='min-h-screen'>
-         {/* Hero Section with Carousel */}
-         <section className='relative'>
-            <Slider {...sliderSettings} className='overflow-hidden'>
-               {carouselItems.map((item, index) => (
-                  <div key={index} className='relative h-[600px]'>
-                     <div className='absolute inset-0 bg-gray-900'>
-                        {item.image}
-                        <div className='absolute inset-0 bg-black bg-opacity-50' />
-                     </div>
-                     <div className='relative h-full flex items-center'>
-                        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-                           <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.5 }}
-                              className='text-center'
-                           >
-                              <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4'>
-                                 {item.title}
-                              </h1>
-                              <p className='text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto'>
-                                 {item.description}
-                              </p>
-                           </motion.div>
-                        </div>
-                     </div>
-                  </div>
-               ))}
-            </Slider>
-         </section>
+      <div>
+         {/* Hero Carousel */}
+         <Carousel />
 
-         {/* Features Section */}
-         <section className='py-20 bg-white'>
+         {/* Main Content */}
+         <section className='py-16 bg-white'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-               <div className='text-center mb-16'>
-                  <h2 className='text-3xl sm:text-4xl font-bold text-gray-900 mb-4'>
-                     Our Services
+               <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className='text-center mb-12'
+               >
+                  <h2 className='text-3xl font-bold text-gray-900 mb-4'>
+                     TEMPEST and Rugged Equipment
                   </h2>
                   <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-                     EuroTempest provides essential weather intelligence and natural catastrophe
-                     services to support the insurance industry across Europe.
+                     We provide high-assurance IT products to qualified defence and government
+                     customers. Our solutions meet formal EU, NATO, and bespoke standards for
+                     compliance.
                   </p>
-               </div>
+               </motion.div>
 
-               <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                  {features.map((feature, index) => (
-                     <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className='bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow overflow-hidden'
-                     >
-                        <Placeholder
-                           height={200}
-                           text={feature.title}
-                           className='mb-6 rounded-lg'
-                        />
-                        <h3 className='text-xl font-semibold text-gray-900 mb-4'>
-                           {feature.title}
-                        </h3>
-                        <p className='text-gray-600'>{feature.description}</p>
-                     </motion.div>
-                  ))}
+               <div className='grid md:grid-cols-3 gap-8'>
+                  {/* Product Categories */}
+                  <motion.div
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6 }}
+                     className='bg-gray-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow'
+                  >
+                     <div className='h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4'>
+                        <svg
+                           className='h-6 w-6 text-blue-600'
+                           fill='none'
+                           stroke='currentColor'
+                           viewBox='0 0 24 24'
+                        >
+                           <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={2}
+                              d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
+                           />
+                        </svg>
+                     </div>
+                     <h3 className='text-xl font-semibold text-gray-900 mb-2'>Computers</h3>
+                     <p className='text-gray-600'>
+                        High-security computing solutions for sensitive environments.
+                     </p>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6, delay: 0.2 }}
+                     className='bg-gray-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow'
+                  >
+                     <div className='h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4'>
+                        <svg
+                           className='h-6 w-6 text-blue-600'
+                           fill='none'
+                           stroke='currentColor'
+                           viewBox='0 0 24 24'
+                        >
+                           <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={2}
+                              d='M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                           />
+                        </svg>
+                     </div>
+                     <h3 className='text-xl font-semibold text-gray-900 mb-2'>Mobile Devices</h3>
+                     <p className='text-gray-600'>Secure mobile computing for field operations.</p>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6, delay: 0.4 }}
+                     className='bg-gray-50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow'
+                  >
+                     <div className='h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4'>
+                        <svg
+                           className='h-6 w-6 text-blue-600'
+                           fill='none'
+                           stroke='currentColor'
+                           viewBox='0 0 24 24'
+                        >
+                           <path
+                              strokeLinecap='round'
+                              strokeLinejoin='round'
+                              strokeWidth={2}
+                              d='M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z'
+                           />
+                        </svg>
+                     </div>
+                     <h3 className='text-xl font-semibold text-gray-900 mb-2'>Network Security</h3>
+                     <p className='text-gray-600'>
+                        Advanced networking solutions with built-in security.
+                     </p>
+                  </motion.div>
                </div>
             </div>
          </section>
 
-         {/* CTA Section */}
-         <section className='bg-blue-600 py-16'>
+         {/* Features Section */}
+         <section className='py-16 bg-gray-50'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-               <div className='text-center'>
-                  <h2 className='text-3xl font-bold text-white mb-4'>Ready to get started?</h2>
-                  <p className='text-xl text-blue-100 mb-8'>
-                     Contact us today to learn more about our services and how we can help your
-                     business.
-                  </p>
-                  <motion.button
-                     whileHover={{ scale: 1.05 }}
-                     whileTap={{ scale: 0.95 }}
-                     className='bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors'
-                     onClick={() => (window.location.href = '/contact')}
+               <div className='grid md:grid-cols-2 gap-12 items-center'>
+                  <motion.div
+                     initial={{ opacity: 0, x: -20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6 }}
                   >
-                     Contact Us
-                  </motion.button>
+                     <h2 className='text-3xl font-bold text-gray-900 mb-4'>
+                        Why Choose EuroTempest?
+                     </h2>
+                     <p className='text-gray-600 mb-6'>
+                        We modify and enhance off-the-shelf IT products and networking solutions to
+                        meet the highest security standards.
+                     </p>
+                     <ul className='space-y-4'>
+                        <li className='flex items-start'>
+                           <svg
+                              className='h-6 w-6 text-blue-600 mr-2 flex-shrink-0'
+                              fill='none'
+                              stroke='currentColor'
+                              viewBox='0 0 24 24'
+                           >
+                              <path
+                                 strokeLinecap='round'
+                                 strokeLinejoin='round'
+                                 strokeWidth={2}
+                                 d='M5 13l4 4L19 7'
+                              />
+                           </svg>
+                           <span>NATO and EU certified solutions</span>
+                        </li>
+                        <li className='flex items-start'>
+                           <svg
+                              className='h-6 w-6 text-blue-600 mr-2 flex-shrink-0'
+                              fill='none'
+                              stroke='currentColor'
+                              viewBox='0 0 24 24'
+                           >
+                              <path
+                                 strokeLinecap='round'
+                                 strokeLinejoin='round'
+                                 strokeWidth={2}
+                                 d='M5 13l4 4L19 7'
+                              />
+                           </svg>
+                           <span>Comprehensive security testing</span>
+                        </li>
+                        <li className='flex items-start'>
+                           <svg
+                              className='h-6 w-6 text-blue-600 mr-2 flex-shrink-0'
+                              fill='none'
+                              stroke='currentColor'
+                              viewBox='0 0 24 24'
+                           >
+                              <path
+                                 strokeLinecap='round'
+                                 strokeLinejoin='round'
+                                 strokeWidth={2}
+                                 d='M5 13l4 4L19 7'
+                              />
+                           </svg>
+                           <span>Expert technical support</span>
+                        </li>
+                     </ul>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, x: 20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6, delay: 0.2 }}
+                     className='bg-white p-6 rounded-lg shadow-lg'
+                  >
+                     <h3 className='text-xl font-semibold text-gray-900 mb-4'>
+                        Our Certifications
+                     </h3>
+                     <div className='space-y-4'>
+                        <div className='flex items-center p-4 bg-gray-50 rounded-lg'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+                                 />
+                              </svg>
+                           </div>
+                           <div>
+                              <h4 className='font-medium text-gray-900'>NATO SDIP-27/2</h4>
+                              <p className='text-sm text-gray-600'>Level A Certified</p>
+                           </div>
+                        </div>
+                        <div className='flex items-center p-4 bg-gray-50 rounded-lg'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth={2}
+                                    d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+                                 />
+                              </svg>
+                           </div>
+                           <div>
+                              <h4 className='font-medium text-gray-900'>EU IASG 7-03</h4>
+                              <p className='text-sm text-gray-600'>Level A Certified</p>
+                           </div>
+                        </div>
+                     </div>
+                  </motion.div>
                </div>
             </div>
          </section>

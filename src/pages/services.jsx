@@ -1,136 +1,255 @@
 import { motion } from 'framer-motion'
-import Placeholder from '../components/Placeholder'
 
-const services = [
-   {
-      title: 'Weather Intelligence',
-      description: 'Real-time weather monitoring and forecasting for the insurance industry',
-      features: [
-         '24/7 weather monitoring',
-         'Detailed weather forecasts',
-         'Historical weather data analysis',
-         'Custom weather alerts',
-      ],
-      image: <Placeholder height={400} text='Weather Intelligence' />,
-   },
-   {
-      title: 'Natural Catastrophe Response',
-      description: 'Expert analysis and reporting on natural catastrophe events',
-      features: [
-         'Rapid event assessment',
-         'Detailed damage analysis',
-         'Claims validation support',
-         'Post-event reporting',
-      ],
-      image: <Placeholder height={400} text='Natural Catastrophe Response' />,
-   },
-   {
-      title: 'Insurance Support',
-      description: 'Comprehensive support for insurance operations',
-      features: ['Claims validation', 'Risk assessment', 'Portfolio analysis', 'Custom reporting'],
-      image: <Placeholder height={400} text='Insurance Support' />,
-   },
-]
+const Services = () => {
+   const services = [
+      {
+         title: 'Weather Intelligence',
+         description:
+            'Access real-time weather data and advanced forecasting to make informed business decisions.',
+         icon: (
+            <svg
+               className='h-8 w-8 text-blue-600'
+               fill='none'
+               stroke='currentColor'
+               viewBox='0 0 24 24'
+            >
+               <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
+               />
+            </svg>
+         ),
+      },
+      {
+         title: 'Risk Assessment',
+         description:
+            'Comprehensive analysis of weather-related risks and their potential impact on your operations.',
+         icon: (
+            <svg
+               className='h-8 w-8 text-blue-600'
+               fill='none'
+               stroke='currentColor'
+               viewBox='0 0 24 24'
+            >
+               <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+               />
+            </svg>
+         ),
+      },
+      {
+         title: 'Consulting Services',
+         description: 'Expert guidance on weather risk management strategies and implementation.',
+         icon: (
+            <svg
+               className='h-8 w-8 text-blue-600'
+               fill='none'
+               stroke='currentColor'
+               viewBox='0 0 24 24'
+            >
+               <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
+               />
+            </svg>
+         ),
+      },
+   ]
 
-function Services() {
    return (
-      <div className='min-h-screen'>
+      <div className='py-16 bg-gray-50'>
          {/* Hero Section */}
-         <section className='bg-gray-900 py-20'>
+         <section className='mb-16'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className='text-center'
+                  transition={{ duration: 0.8 }}
+                  className='text-center mb-12'
                >
-                  <h1 className='text-4xl sm:text-5xl font-bold text-white mb-6'>Our Services</h1>
-                  <p className='text-xl text-gray-300 max-w-3xl mx-auto'>
-                     Comprehensive weather intelligence and natural catastrophe services tailored
-                     for the insurance industry
+                  <h1 className='text-4xl font-bold text-gray-900 mb-4'>Our Services</h1>
+                  <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                     Comprehensive weather risk management solutions tailored to your business
+                     needs.
                   </p>
                </motion.div>
             </div>
          </section>
 
-         {/* Services Section */}
-         <section className='py-20 bg-white'>
+         {/* Services Grid */}
+         <section className='mb-16'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-               <div className='space-y-20'>
+               <div className='grid md:grid-cols-3 gap-8'>
                   {services.map((service, index) => (
                      <motion.div
-                        key={index}
+                        key={service.title}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
-                        className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                           index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                        }`}
+                        transition={{ duration: 0.6, delay: index * 0.2 }}
+                        className='bg-white p-6 rounded-lg shadow-lg'
                      >
-                        <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                           <h2 className='text-3xl font-bold text-gray-900 mb-6'>
-                              {service.title}
-                           </h2>
-                           <p className='text-lg text-gray-600 mb-8'>{service.description}</p>
-                           <ul className='space-y-4'>
-                              {service.features.map((feature, featureIndex) => (
-                                 <motion.li
-                                    key={featureIndex}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
-                                    viewport={{ once: true }}
-                                    className='flex items-start'
-                                 >
-                                    <svg
-                                       className='h-6 w-6 text-blue-600 mr-3 flex-shrink-0'
-                                       fill='none'
-                                       viewBox='0 0 24 24'
-                                       stroke='currentColor'
-                                    >
-                                       <path
-                                          strokeLinecap='round'
-                                          strokeLinejoin='round'
-                                          strokeWidth={2}
-                                          d='M5 13l4 4L19 7'
-                                       />
-                                    </svg>
-                                    <span className='text-gray-600'>{feature}</span>
-                                 </motion.li>
-                              ))}
-                           </ul>
+                        <div className='h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4'>
+                           {service.icon}
                         </div>
-                        <div
-                           className={`relative rounded-lg overflow-hidden shadow-xl ${
-                              index % 2 === 1 ? 'lg:col-start-1' : ''
-                           }`}
-                        >
-                           {service.image}
-                        </div>
+                        <h3 className='text-xl font-semibold text-gray-900 mb-2'>
+                           {service.title}
+                        </h3>
+                        <p className='text-gray-600'>{service.description}</p>
                      </motion.div>
                   ))}
                </div>
             </div>
          </section>
 
-         {/* CTA Section */}
-         <section className='bg-blue-600 py-16'>
+         {/* Features Section */}
+         <section className='bg-white py-16'>
             <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-               <div className='text-center'>
-                  <h2 className='text-3xl font-bold text-white mb-4'>Ready to get started?</h2>
-                  <p className='text-xl text-blue-100 mb-8'>
-                     Contact us today to learn more about our services and how we can help your
-                     business.
+               <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className='text-center mb-12'
+               >
+                  <h2 className='text-3xl font-bold text-gray-900 mb-4'>Why Choose Us</h2>
+                  <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
+                     We combine advanced technology with expert analysis to deliver superior weather
+                     risk management solutions.
                   </p>
-                  <motion.button
-                     whileHover={{ scale: 1.05 }}
-                     whileTap={{ scale: 0.95 }}
-                     className='bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors'
-                     onClick={() => (window.location.href = '/contact')}
+               </motion.div>
+
+               <div className='grid md:grid-cols-2 gap-12'>
+                  <motion.div
+                     initial={{ opacity: 0, x: -20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6 }}
+                     className='space-y-6'
                   >
-                     Contact Us
-                  </motion.button>
+                     <div className='flex items-start'>
+                        <div className='flex-shrink-0'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
+                                    d='M5 13l4 4L19 7'
+                                 />
+                              </svg>
+                           </div>
+                        </div>
+                        <div className='ml-4'>
+                           <h3 className='text-lg font-medium text-gray-900'>
+                              Advanced Technology
+                           </h3>
+                           <p className='text-gray-600'>
+                              State-of-the-art forecasting and analysis tools
+                           </p>
+                        </div>
+                     </div>
+
+                     <div className='flex items-start'>
+                        <div className='flex-shrink-0'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
+                                    d='M5 13l4 4L19 7'
+                                 />
+                              </svg>
+                           </div>
+                        </div>
+                        <div className='ml-4'>
+                           <h3 className='text-lg font-medium text-gray-900'>Expert Team</h3>
+                           <p className='text-gray-600'>
+                              Experienced professionals in weather risk management
+                           </p>
+                        </div>
+                     </div>
+                  </motion.div>
+
+                  <motion.div
+                     initial={{ opacity: 0, x: 20 }}
+                     whileInView={{ opacity: 1, x: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ duration: 0.6, delay: 0.2 }}
+                     className='space-y-6'
+                  >
+                     <div className='flex items-start'>
+                        <div className='flex-shrink-0'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
+                                    d='M5 13l4 4L19 7'
+                                 />
+                              </svg>
+                           </div>
+                        </div>
+                        <div className='ml-4'>
+                           <h3 className='text-lg font-medium text-gray-900'>
+                              Customized Solutions
+                           </h3>
+                           <p className='text-gray-600'>
+                              Tailored approaches for your specific needs
+                           </p>
+                        </div>
+                     </div>
+
+                     <div className='flex items-start'>
+                        <div className='flex-shrink-0'>
+                           <div className='h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center'>
+                              <svg
+                                 className='h-6 w-6 text-blue-600'
+                                 fill='none'
+                                 stroke='currentColor'
+                                 viewBox='0 0 24 24'
+                              >
+                                 <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    strokeWidth='2'
+                                    d='M5 13l4 4L19 7'
+                                 />
+                              </svg>
+                           </div>
+                        </div>
+                        <div className='ml-4'>
+                           <h3 className='text-lg font-medium text-gray-900'>24/7 Support</h3>
+                           <p className='text-gray-600'>
+                              Round-the-clock assistance and monitoring
+                           </p>
+                        </div>
+                     </div>
+                  </motion.div>
                </div>
             </div>
          </section>
