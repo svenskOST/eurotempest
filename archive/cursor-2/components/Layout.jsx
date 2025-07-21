@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
@@ -20,7 +20,7 @@ function Layout({ children }) {
                <div className='flex justify-between h-16'>
                   <div className='flex'>
                      {/* Logo */}
-                     <Link to='/' className='flex-shrink-0 flex items-center'>
+                     <Link href='/' className='flex-shrink-0 flex items-center'>
                         <span className='text-xl font-bold text-gray-900'>EuroTempest</span>
                      </Link>
 
@@ -29,7 +29,7 @@ function Layout({ children }) {
                         {navigation.map(item => (
                            <Link
                               key={item.name}
-                              to={item.href}
+                              href={item.href}
                               className='inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-blue-600'
                            >
                               {item.name}
@@ -63,7 +63,7 @@ function Layout({ children }) {
                      {navigation.map(item => (
                         <Link
                            key={item.name}
-                           to={item.href}
+                           href={item.href}
                            className='block pl-3 pr-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                            onClick={() => setMobileMenuOpen(false)}
                         >
@@ -94,7 +94,7 @@ function Layout({ children }) {
                      <ul className='space-y-2'>
                         {navigation.map(item => (
                            <li key={item.name}>
-                              <Link to={item.href} className='text-gray-300 hover:text-white'>
+                              <Link href={item.href} className='text-gray-300 hover:text-white'>
                                  {item.name}
                               </Link>
                            </li>

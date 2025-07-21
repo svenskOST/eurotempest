@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenu, HiX } from 'react-icons/hi'
 
@@ -38,7 +38,7 @@ const Navbar = () => {
       >
          <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-between h-16 items-center'>
-               <Link to='/' className='flex items-center'>
+               <Link href='/' className='flex items-center'>
                   <span
                      className={`text-xl font-bold transition-colors ${
                         scrolled ? 'text-gray-900' : 'text-white'
@@ -53,7 +53,7 @@ const Navbar = () => {
                   {navItems.map(item => (
                      <Link
                         key={item.name}
-                        to={item.path}
+                        href={item.path}
                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                            scrolled
                               ? 'text-gray-600 hover:text-gray-900'
@@ -95,7 +95,7 @@ const Navbar = () => {
                      {navItems.map(item => (
                         <Link
                            key={item.name}
-                           to={item.path}
+                           href={item.path}
                            className='block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium'
                            onClick={() => setIsOpen(false)}
                         >
