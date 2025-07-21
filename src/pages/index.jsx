@@ -107,7 +107,7 @@ function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className='bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow'
+                        className='bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow overflow-hidden'
                      >
                         <Placeholder
                            height={200}
