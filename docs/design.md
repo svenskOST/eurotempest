@@ -1,14 +1,10 @@
-### Prototypes
-- [Lovable](https://lovable.dev/projects/0422565e-70f0-4196-9706-9a25afe8fb36)
-- [Replit](https://replit.com/@svenskOST/Eurotempest)
-- [Figma Make](https://www.figma.com/make/TE6pZcmYqX0edITpu4JxC9/Tempest-Cybersecurity-Company-Website?node-id=0-1&p=f&t=TMLY3TbMw8ytYMmJ-0)
-
 ### Inspiration
 - [Eurotempest (original website)](https://eurotempest.net/)
 - [Trellix (cybersecurity company)](https://www.trellix.com/)
 - [Similiarweb (popular websites, filterable by industry)](https://www.similarweb.com/top-websites/)
 - [Mobbin (web apps from different industries)](https://mobbin.com/discover/apps/web/popular)
 - [All kinds of inspiration (SaaS apps, websites, pages, sections & more)](https://www.saasframe.io/)
+- [Figma Make Prototype](https://www.figma.com/make/TE6pZcmYqX0edITpu4JxC9/Tempest-Cybersecurity-Company-Website?node-id=0-1&p=f&t=TMLY3TbMw8ytYMmJ-0)
 
 ### Design Systems
 - [Refactoring UI](file:///C:/Users/Alexander/Valv/Arkiv/Material/Refactoring%20UI.pdf)
