@@ -1,19 +1,19 @@
-import Navbar from './Navbar'
+import { Poppins, Titillium_Web } from 'next/font/google'
+
+const poppins = Poppins({
+   subsets: ['latin'],
+   weight: ['200', '300', '400', '600', '700', '900'],
+   variable: '--font-body',
+})
+
+const titilliumWeb = Titillium_Web({
+   subsets: ['latin'],
+   weight: ['200', '300', '400', '600', '700', '900'],
+   variable: '--font-display',
+})
 
 const Layout = ({ children }) => {
-   return (
-      <div className='min-h-screen bg-gray-50'>
-         <Navbar />
-         <main className='pt-16'>{children}</main>
-         <footer className='bg-gray-800 text-white py-8 mt-auto'>
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-               <p className='text-center'>
-                  &copy; {new Date().getFullYear()} EuroTempest. All rights reserved.
-               </p>
-            </div>
-         </footer>
-      </div>
-   )
+   return <div className={poppins.variable + ' ' + titilliumWeb.variable}>{children}</div>
 }
 
 export default Layout
