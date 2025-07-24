@@ -1,5 +1,43 @@
 @import 'tailwindcss';
 
+/*
+   Usage guide:
+
+   Setting colors:
+      text-(color) - text color
+      bg-(color) - background color
+      border-(color) - border color
+      shadow-(color) - shadow color
+
+      Custom palette:
+         neutral-(100-900)
+         primary-(100-900)
+         accent-green-(100-900)
+         accent-red-(100-900)
+         accent-yellow-(100-900)
+
+   Typography:
+      text-(100-900) - font size
+      weight-(100-900) - font weight
+      font-(display|body|mono|somethingElse) - font family
+      leading(none|tight|snug|normal|relaxed|loose) - line height
+      tracking-(tighter|tight|normal|wide|wider|widest) - letter spacing
+      text-(left|center|right|justify) - text align
+      hyphens-(none|manual|auto) - hyphens
+      line-clamp-(number) - truncate text
+
+   Custom scale:
+      w/h/m/p-(0-16)
+      t/r/b/l-(0-16)
+      & more-(0-16)
+
+   Other common utilities:
+      (block|hidden|flex|grid|&more) - display
+      (static|fixed|absolute|relative|sticky) - positioning
+      border-(2-8)|(dashed|full) - border width and style
+      rounded-(xs-4xl|full)- border-radius
+*/
+
 @theme {
    --color-neutral-100: hsl(220, 18%, 98%);
    --color-neutral-200: hsl(220, 16%, 95%);
@@ -39,81 +77,94 @@
    --color-accent-yellow-700: hsl(48, 85%, 45%);
    --color-accent-yellow-900: hsl(48, 90%, 40%);
 
-   --font-size-100: 0.875rem;
-   --font-size-200: 1rem;
-   --font-size-300: 1.125rem;
-   --font-size-400: 1.25rem;
-   --font-size-500: 1.5rem;
-   --font-size-600: 1.875rem;
-   --font-size-700: 2.25rem;
-   --font-size-800: 3rem;
-   --font-size-900: 3.75rem;
+   --text-100: 0.875rem;
+   --text-200: 1rem;
+   --text-300: 1.125rem;
+   --text-400: 1.25rem;
+   --text-500: 1.5rem;
+   --text-600: 1.875rem;
+   --text-700: 2.25rem;
+   --text-800: 3rem;
+   --text-900: 3.75rem;
+
+   --weight-100: 100;
+   --weight-200: 200;
+   --weight-300: 300;
+   --weight-400: 400;
+   --weight-500: 500;
+   --weight-600: 600;
+   --weight-700: 700;
+   --weight-800: 800;
+   --weight-900: 900;
 
    --font-display: var(--font-titillium-web);
    --font-body: var(--font-poppins);
 
-   --font-weight-100: 100;
-   --font-weight-200: 200;
-   --font-weight-300: 300;
-   --font-weight-400: 400;
-   --font-weight-500: 500;
-   --font-weight-600: 600;
-   --font-weight-700: 700;
-   --font-weight-800: 800;
-   --font-weight-900: 900;
-
-   --line-height-none: 1;
-   --line-height-tight: 1.25;
-   --line-height-base: 1.5;
-   --line-height-loose: 1.75;
-   --line-height-much: 2;
-
-   --letter-spacing-tight: -0.1em;
-   --letter-spacing-base: 0;
-   --letter-spacing-wider: 0.1em;
-   --letter-spacing-widest: 0.4em;
-
-   --space-0: 0;
-   --space-1: 0.25rem;
-   --space-2: 0.5rem;
-   --space-3: 0.75rem;
-   --space-4: 1rem;
-   --space-5: 1.5rem;
-   --space-6: 2rem;
-   --space-7: 3rem;
-   --space-8: 4rem;
-   --space-9: 6rem;
-   --space-10: 8rem;
-   --space-11: 12rem;
-   --space-12: 16rem;
-   --space-13: 24rem;
-   --space-14: 32rem;
-   --space-15: 40rem;
-   --space-16: 48rem;
-
-   --border-width-none: 0;
-   --border-width-thin: 0.0625rem;
-   --border-width-base: 0.125rem;
-   --border-width-thick: 0.25rem;
-
-   --depth-effect-raised-100: 0 -2px 0 var(--tw-shadow-color), 0 1px 1px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-raised-300: 0 -3px 0 var(--tw-shadow-color), 0 2px 2px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-raised-500: 0 -4px 0 var(--tw-shadow-color), 0 3px 3px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-raised-700: 0 -5px 0 var(--tw-shadow-color), 0 4px 4px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-raised-900: 0 -6px 0 var(--tw-shadow-color), 0 5px 5px hsla(0, 0%, 0%, 0.5);
-
-   --depth-effect-lowered-100: inset 0 -1px 0 var(--tw-shadow-color),
-      inset 0 1px 1px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-lowered-300: inset 0 -2px 0 var(--tw-shadow-color),
-      inset 0 2px 2px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-lowered-500: inset 0 -3px 0 var(--tw-shadow-color),
-      inset 0 3px 3px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-lowered-700: inset 0 -4px 0 var(--tw-shadow-color),
-      inset 0 4px 4px hsla(0, 0%, 0%, 0.5);
-   --depth-effect-lowered-900: inset 0 -5px 0 var(--tw-shadow-color),
-      inset 0 5px 5px hsla(0, 0%, 0%, 0.5);
+   --spacing-0: 0;
+   --spacing-1: 0.25rem;
+   --spacing-2: 0.5rem;
+   --spacing-3: 0.75rem;
+   --spacing-4: 1rem;
+   --spacing-5: 1.5rem;
+   --spacing-6: 2rem;
+   --spacing-7: 3rem;
+   --spacing-8: 4rem;
+   --spacing-9: 6rem;
+   --spacing-10: 8rem;
+   --spacing-11: 12rem;
+   --spacing-12: 16rem;
+   --spacing-13: 24rem;
+   --spacing-14: 32rem;
+   --spacing-15: 40rem;
+   --spacing-16: 48rem;
 }
 
-@utility text-* {
-   font-size: --value(--font-size- *);
+@utility weight-* {
+   font-weight: --value(--weight- *);
+}
+
+@utility raised-100 {
+   box-shadow: 0 -2px 0 var(--tw-shadow-color), 0 1px 1px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility raised-300 {
+   box-shadow: 0 -3px 0 var(--tw-shadow-color), 0 2px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility raised-500 {
+   box-shadow: 0 -4px 0 var(--tw-shadow-color), 0 3px 3px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility raised-700 {
+   box-shadow: 0 -5px 0 var(--tw-shadow-color), 0 4px 4px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility raised-900 {
+   box-shadow: 0 -6px 0 var(--tw-shadow-color), 0 5px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility lowered-100 {
+   box-shadow: inset 0 -1px 0 var(--tw-shadow-color), inset 0 1px 1px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility lowered-300 {
+   box-shadow: inset 0 -2px 0 var(--tw-shadow-color), inset 0 2px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility lowered-500 {
+   box-shadow: inset 0 -3px 0 var(--tw-shadow-color), inset 0 3px 3px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility lowered-700 {
+   box-shadow: inset 0 -4px 0 var(--tw-shadow-color), inset 0 4px 4px hsla(0, 0%, 0%, 0.5);
+}
+
+@utility lowered-900 {
+   box-shadow: inset 0 -5px 0 var(--tw-shadow-color), inset 0 5px 5px hsla(0, 0%, 0%, 0.5);
+}
+
+@layer base {
+   h1 {
+      @apply font-display;
+   }
 }
