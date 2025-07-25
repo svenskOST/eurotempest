@@ -13,14 +13,6 @@
 - [IBM Carbon (for reference, do not implement in this project)](https://www.figma.com/design/rQ29eOWvfQQ1jmPLjekByh/-v11--Carbon-Design-System--Community-?t=WeSkWywMDbT71v2I-0)
 - [Different design systems](https://component.gallery/design-systems/)
 
-### Fonts
-- Barlow Condensed & Montserrat
-- Inter
-- News Reader
-- Poppins
-- Roboto
-- Work Sans
-
 ### Notes
 - For nested border radii, the outer radius should be the equivalent of the inner radius and the padding between them.
 
