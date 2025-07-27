@@ -59,8 +59,8 @@
    --weight-800: 800;
    --weight-900: 900;
 
-   --font-display: var(--font-titillium-web);
-   --font-body: var(--font-poppins);
+   --font-display: var(--font-display);
+   --font-body: var(--font-body);
 }
 
 @utility weight-* {
