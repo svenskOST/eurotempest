@@ -1,4 +1,5 @@
 import { Newsreader, Work_Sans } from 'next/font/google'
+import TailwindScreenSize from '../components/dev/TailwindScreenSize'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
@@ -17,6 +18,7 @@ const workSans = Work_Sans({
 const Layout = ({ children }) => {
    return (
       <div className={newsreader.variable + ' ' + workSans.variable}>
+         <TailwindScreenSize />
          <Navbar />
          <main>{children}</main>
          <Footer />
