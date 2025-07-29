@@ -15,7 +15,7 @@ const workSans = Work_Sans({
    variable: '--font-body',
 })
 
-const Layout = ({ children }) => {
+export default function Layout({ children }) {
    return (
       <div className={newsreader.variable + ' ' + workSans.variable}>
          <TailwindScreenSize />
@@ -25,5 +25,3 @@ const Layout = ({ children }) => {
       </div>
    )
 }
-
-export default Layout
