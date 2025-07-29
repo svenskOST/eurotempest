@@ -13,7 +13,29 @@ export default function Navbar() {
             </div>
 
             <div className='w-1/3 h-ful lg:w-3/4 flex justify-end items-center lg:justify-start'>
-               <button className='w-14 aspect-square cursor-pointer bg-white lg:hidden'></button>
+               <button className='px-2 py-1 cursor-pointer text-gray-200 transition hover:bg-red-900/50 rounded-md flex justify-center items-center lg:hidden'>
+                  <svg
+                     xmlns='http://www.w3.org/2000/svg'
+                     viewBox='0 0 20 20'
+                     fill='currentColor'
+                     className='size-10 sm:size-12'
+                  >
+                     <path
+                        fillRule='evenodd'
+                        d='M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z'
+                        clipRule='evenodd'
+                     />
+                  </svg>
+                  <svg
+                     xmlns='http://www.w3.org/2000/svg'
+                     viewBox='0 0 20 20'
+                     fill='currentColor'
+                     className='size-10 sm:size-12'
+                  >
+                     <path d='M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z' />
+                  </svg>
+               </button>
+
                <div className='hidden items-center h-full lg:flex'>
                   <NavLink href='/'>Home</NavLink>
                   <NavLink href='/credentials'>Credentials</NavLink>
