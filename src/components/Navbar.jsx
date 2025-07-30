@@ -46,69 +46,81 @@ export default function Navbar() {
                      <button
                         ref={buttonRef}
                         onClick={toggleMenu}
-                        className='px-2 py-1 cursor-pointer text-gray-200 transition hover:bg-red-900/50 rounded-md flex justify-center items-center'
+                        className='px-8 py-2 cursor-pointer text-gray-200 hover:bg-red-900/50 rounded-md flex justify-center items-center transition-colors duration-300 h-12 w-12 sm:h-14 sm:w-14'
                         aria-label='Toggle menu'
                         aria-expanded={isMenuOpen}
                      >
-                        {isMenuOpen ? (
-                           <svg
-                              xmlns='http://www.w3.org/2000/svg'
-                              viewBox='0 0 20 20'
-                              fill='currentColor'
-                              className='size-10 sm:size-12'
-                           >
-                              <path d='M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z' />
-                           </svg>
-                        ) : (
-                           <svg
-                              xmlns='http://www.w3.org/2000/svg'
-                              viewBox='0 0 20 20'
-                              fill='currentColor'
-                              className='size-10 sm:size-12'
-                           >
-                              <path d='M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z' />
-                           </svg>
-                        )}
+                        <div className='relative w-full h-full flex items-center justify-center'>
+                           <span
+                              className={`absolute w-8 h-[3px] bg-current rounded-full transition-all duration-300 ${
+                                 isMenuOpen ? 'rotate-45 translate-y-0' : '-translate-y-2.5'
+                              }`}
+                           ></span>
+                           <span
+                              className={`absolute w-8 h-[3px] bg-current rounded-full transition-all duration-300 ${
+                                 isMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'
+                              }`}
+                           ></span>
+                           <span
+                              className={`absolute w-8 h-[3px] bg-current rounded-full transition-all duration-300 ${
+                                 isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-2.5'
+                              }`}
+                           ></span>
+                        </div>
                      </button>
                   </div>
 
                   <div className='hidden items-center h-full lg:flex text-100 lg:text-200 2xl:text-300'>
-                     <DesktopNavLink href='/'>Home</DesktopNavLink>
-                     <DesktopNavLink href='/credentials'>Credentials</DesktopNavLink>
-                     <DesktopNavLink href='/about'>About</DesktopNavLink>
-                     <DesktopNavLink href='/products'>Products</DesktopNavLink>
-                     <DesktopNavLink href='/contact'>Contact</DesktopNavLink>
-                     <DesktopNavLink href='/news'>News</DesktopNavLink>
+                     <DesktopNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
+                        Home
+                     </DesktopNavLink>
+                     <DesktopNavLink href='/credentials' setIsMenuOpen={setIsMenuOpen}>
+                        Credentials
+                     </DesktopNavLink>
+                     <DesktopNavLink href='/about' setIsMenuOpen={setIsMenuOpen}>
+                        About
+                     </DesktopNavLink>
+                     <DesktopNavLink href='/products' setIsMenuOpen={setIsMenuOpen}>
+                        Products
+                     </DesktopNavLink>
+                     <DesktopNavLink href='/contact' setIsMenuOpen={setIsMenuOpen}>
+                        Contact
+                     </DesktopNavLink>
+                     <DesktopNavLink href='/news' setIsMenuOpen={setIsMenuOpen}>
+                        News
+                     </DesktopNavLink>
                   </div>
                </div>
             </div>
          </nav>
 
-         {isMenuOpen && (
-            <div
-               className='fixed z-50 w-full top-18 left-0 bg-gray-800 py-8 raised-700 text-700 flex items-center flex-col lg:hidden'
-               ref={menuRef}
-            >
-               <MobileNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
-                  Home
-               </MobileNavLink>
-               <MobileNavLink href='/credentials' setIsMenuOpen={setIsMenuOpen}>
-                  Credentials
-               </MobileNavLink>
-               <MobileNavLink href='/about' setIsMenuOpen={setIsMenuOpen}>
-                  About
-               </MobileNavLink>
-               <MobileNavLink href='/products' setIsMenuOpen={setIsMenuOpen}>
-                  Products
-               </MobileNavLink>
-               <MobileNavLink href='/Contact' setIsMenuOpen={setIsMenuOpen}>
-                  Contact
-               </MobileNavLink>
-               <MobileNavLink href='/news' setIsMenuOpen={setIsMenuOpen}>
-                  News
-               </MobileNavLink>
-            </div>
-         )}
+         <div
+            className={`fixed z-50 w-full pt-24 left-0 bg-gray-800 py-8 raised-700 text-700 flex items-center flex-col lg:hidden transition-all duration-300 ease-in-out transform ${
+               isMenuOpen
+                  ? 'opacity-100 translate-y-0 visible'
+                  : 'opacity-0 -translate-y-20 pointer-events-none invisible'
+            }`}
+            ref={menuRef}
+         >
+            <MobileNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
+               Home
+            </MobileNavLink>
+            <MobileNavLink href='/credentials' setIsMenuOpen={setIsMenuOpen}>
+               Credentials
+            </MobileNavLink>
+            <MobileNavLink href='/about' setIsMenuOpen={setIsMenuOpen}>
+               About
+            </MobileNavLink>
+            <MobileNavLink href='/products' setIsMenuOpen={setIsMenuOpen}>
+               Products
+            </MobileNavLink>
+            <MobileNavLink href='/contact' setIsMenuOpen={setIsMenuOpen}>
+               Contact
+            </MobileNavLink>
+            <MobileNavLink href='/news' setIsMenuOpen={setIsMenuOpen}>
+               News
+            </MobileNavLink>
+         </div>
       </>
    )
 }
