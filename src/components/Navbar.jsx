@@ -7,10 +7,16 @@ import MobileNavLink from './MobileNavLink'
 export default function Navbar() {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const menuRef = useRef(null)
+   const buttonRef = useRef(null)
 
    useEffect(() => {
       function handleClickOutside(event) {
-         if (menuRef.current && !menuRef.current.contains(event.target)) {
+         if (
+            menuRef.current &&
+            !menuRef.current.contains(event.target) &&
+            buttonRef.current &&
+            !buttonRef.current.contains(event.target)
+         ) {
             setIsMenuOpen(false)
          }
       }
@@ -20,6 +26,10 @@ export default function Navbar() {
          document.removeEventListener('mousedown', handleClickOutside)
       }
    }, [])
+
+   const toggleMenu = () => {
+      setIsMenuOpen(prev => !prev)
+   }
 
    return (
       <>
@@ -31,13 +41,11 @@ export default function Navbar() {
                   </Link>
                </div>
 
-               <div
-                  className='w-fit h-full lg:w-3/4 flex justify-end items-center lg:justify-start'
-                  ref={menuRef}
-               >
+               <div className='w-fit h-full lg:w-3/4 flex justify-end items-center lg:justify-start'>
                   <div className='relative lg:hidden'>
                      <button
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        ref={buttonRef}
+                        onClick={toggleMenu}
                         className='px-2 py-1 cursor-pointer text-gray-200 transition hover:bg-red-900/50 rounded-md flex justify-center items-center'
                         aria-label='Toggle menu'
                         aria-expanded={isMenuOpen}
