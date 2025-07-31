@@ -34,19 +34,19 @@ export default function Navbar() {
    return (
       <>
          <nav className='fixed raised-700 shadow-black top-0 w-full h-18 flex items-center justify-around bg-black/80 bg-gradient-to-r from-gray-900/75 via-red-900/25 to-gray-900/75 backdrop-blur-xs z-100'>
-            <div className='container flex items-center justify-between h-full px-4 lg:px-22 xl:gap-36 2xl:gap-44'>
-               <div className='w-2/3 md:w-1/3 lg:w-1/4'>
+            <div className='container flex items-center justify-between h-full px-4'>
+               <div className='mx-4 w-70 sm:w-80 md:w-90 lg:w-70'>
                   <Link href='/' onClick={() => setIsMenuOpen(false)}>
                      <Image src='/logo.png' alt='Eurotempest Logo' width={827} height={44} />
                   </Link>
                </div>
 
-               <div className='w-fit h-full lg:w-3/4 flex justify-end items-center lg:justify-start'>
+               <div className='w-fit h-full flex items-center'>
                   <div className='relative lg:hidden'>
                      <button
                         ref={buttonRef}
                         onClick={toggleMenu}
-                        className='px-8 py-2 cursor-pointer text-gray-200 hover:bg-red-900/50 rounded-md flex justify-center items-center transition-colors duration-300 h-12 w-12 sm:h-14 sm:w-14'
+                        className='cursor-pointer text-gray-200 hover:bg-red-900/50 rounded-md flex justify-center items-center transition-colors duration-300 h-12 w-14'
                         aria-label='Toggle menu'
                         aria-expanded={isMenuOpen}
                      >
@@ -70,7 +70,7 @@ export default function Navbar() {
                      </button>
                   </div>
 
-                  <div className='hidden items-center h-full lg:flex text-100 lg:text-200 2xl:text-300'>
+                  <div className='hidden items-center h-full lg:flex xl:pr-10'>
                      <DesktopNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
                         Home
                      </DesktopNavLink>

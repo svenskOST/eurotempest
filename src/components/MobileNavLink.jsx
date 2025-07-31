@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
@@ -32,7 +31,7 @@ export default function MobileNavLink({ href, children, className, setIsMenuOpen
       >
          {isNavigating ? (
             <div className='flex items-center justify-center w-full h-[54px]'>
-               <div className='w-6 h-6 border-3 border-red-600/90 border-t-2 border-t-transparent rounded-full animate-spin'></div>
+               <span className='w-6 h-6 border-3 border-red-600/80 border-t-red-600/20 rounded-full animate-spin'></span>
             </div>
          ) : (
             children
