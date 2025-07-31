@@ -4,6 +4,15 @@ import Image from 'next/image'
 import DesktopNavLink from './DesktopNavLink'
 import MobileNavLink from './MobileNavLink'
 
+const navLinks = [
+   { href: '/', text: 'Home' },
+   { href: '/credentials', text: 'Credentials' },
+   { href: '/about', text: 'About' },
+   { href: '/products', text: 'Products' },
+   { href: '/contact', text: 'Contact' },
+   { href: '/news', text: 'News' },
+]
+
 export default function Navbar() {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const menuRef = useRef(null)
@@ -34,13 +43,12 @@ export default function Navbar() {
    return (
       <>
          <nav className='fixed raised-700 shadow-black top-0 w-full h-18 flex items-center justify-around bg-black/80 bg-gradient-to-r from-gray-900/75 via-red-900/25 to-gray-900/75 backdrop-blur-xs z-100'>
-            <div className='container flex items-center justify-between h-full px-4'>
-               <div className='mx-4 w-70 sm:w-80 md:w-90 lg:w-70'>
+            <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
+               <div className='mx-4 w-70 lg:w-60 opacity-80'>
                   <Link href='/' onClick={() => setIsMenuOpen(false)}>
                      <Image src='/logo.svg' alt='Eurotempest Logo' width={827} height={44} />
                   </Link>
                </div>
-
                <div className='w-fit h-full flex items-center'>
                   <div className='relative lg:hidden'>
                      <button
@@ -69,31 +77,16 @@ export default function Navbar() {
                         </div>
                      </button>
                   </div>
-
-                  <div className='hidden items-center h-full lg:flex xl:pr-10'>
-                     <DesktopNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
-                        Home
-                     </DesktopNavLink>
-                     <DesktopNavLink href='/credentials' setIsMenuOpen={setIsMenuOpen}>
-                        Credentials
-                     </DesktopNavLink>
-                     <DesktopNavLink href='/about' setIsMenuOpen={setIsMenuOpen}>
-                        About
-                     </DesktopNavLink>
-                     <DesktopNavLink href='/products' setIsMenuOpen={setIsMenuOpen}>
-                        Products
-                     </DesktopNavLink>
-                     <DesktopNavLink href='/contact' setIsMenuOpen={setIsMenuOpen}>
-                        Contact
-                     </DesktopNavLink>
-                     <DesktopNavLink href='/news' setIsMenuOpen={setIsMenuOpen}>
-                        News
-                     </DesktopNavLink>
+                  <div className='hidden items-center h-full lg:flex'>
+                     {navLinks.map((link, index) => (
+                        <DesktopNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
+                           {link.text}
+                        </DesktopNavLink>
+                     ))}
                   </div>
                </div>
             </div>
          </nav>
-
          <div
             className={`fixed z-50 w-full pt-24 left-0 bg-gray-800 py-8 raised-700 text-700 flex items-center flex-col lg:hidden transition-all duration-300 ease-in-out transform ${
                isMenuOpen
@@ -102,24 +95,11 @@ export default function Navbar() {
             }`}
             ref={menuRef}
          >
-            <MobileNavLink href='/' setIsMenuOpen={setIsMenuOpen}>
-               Home
-            </MobileNavLink>
-            <MobileNavLink href='/credentials' setIsMenuOpen={setIsMenuOpen}>
-               Credentials
-            </MobileNavLink>
-            <MobileNavLink href='/about' setIsMenuOpen={setIsMenuOpen}>
-               About
-            </MobileNavLink>
-            <MobileNavLink href='/products' setIsMenuOpen={setIsMenuOpen}>
-               Products
-            </MobileNavLink>
-            <MobileNavLink href='/contact' setIsMenuOpen={setIsMenuOpen}>
-               Contact
-            </MobileNavLink>
-            <MobileNavLink href='/news' setIsMenuOpen={setIsMenuOpen}>
-               News
-            </MobileNavLink>
+            {navLinks.map((link, index) => (
+               <MobileNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
+                  {link.text}
+               </MobileNavLink>
+            ))}
          </div>
       </>
    )
