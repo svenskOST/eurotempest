@@ -6,13 +6,13 @@ import Footer from './Footer'
 const newsreader = Newsreader({
    subsets: ['latin'],
    weight: 'variable',
-   variable: '--font-display',
+   variable: '--font-paragraph',
 })
 
 const workSans = Work_Sans({
    subsets: ['latin'],
    weight: 'variable',
-   variable: '--font-body',
+   variable: '--font-default',
 })
 
 export default function Layout({ children }) {

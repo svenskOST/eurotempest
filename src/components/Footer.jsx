@@ -1,6 +1,15 @@
 import FooterSection from './FooterSection'
+import Image from 'next/image'
 
 const footerContent = [
+   {
+      title: 'Company',
+      links: [
+         { href: '/about', text: 'About' },
+         { href: '/credentials', text: 'Credentials' },
+         { href: '/news', text: 'News' },
+      ],
+   },
    {
       title: 'Products',
       links: [
@@ -13,31 +22,32 @@ const footerContent = [
       ],
    },
    {
-      title: 'Company',
-      links: [
-         { href: '/about', text: 'About' },
-         { href: '/news', text: 'News' },
-         { href: '/credentials', text: 'Credentials' },
-      ],
-   },
-   {
-      title: 'Contact',
+      title: 'Support',
       links: [
          { href: '/contact', text: 'Contact' },
-         { href: '/news', text: 'News' },
+         { href: '/faq', text: 'FAQ' },
+         { href: '/rma-ticket', text: 'RMA Ticket' },
       ],
    },
 ]
 
 export default function Footer() {
    return (
-      <footer className='w-full bg-gray-800 text-white p-4'>
-         <div className='container flex items-center justify-between'>
+      <footer className='w-full bg-gray-800 text-white p-4 flex flex-col justify-center items-center relative'>
+         <div className='container flex justify-around items-center md:items-start mt-6 flex-col md:flex-row'>
             {footerContent.map((section, index) => (
                <FooterSection key={index} title={section.title} links={section.links} />
             ))}
          </div>
-         <p className='text-center'>© 2025 Eurotempest. All rights reserved.</p>
+         <div className='w-92 md:w-lg lg:w-xl bg-gray-600/50 h-0.5 rounded-3xl my-8'></div>
+         <p className='text-center mb-2'>© 2025 Eurotempest. All rights reserved.</p>
+         <Image
+            src='/logo-alt.svg'
+            alt='Eurotempest Logo'
+            className='w-30 md:w-12 md:absolute bottom-0 right-0 m-8'
+            width={115}
+            height={150}
+         />
       </footer>
    )
 }
