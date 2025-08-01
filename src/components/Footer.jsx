@@ -33,21 +33,24 @@ const footerContent = [
 
 export default function Footer() {
    return (
-      <footer className='w-full bg-gray-800 text-white p-4 flex flex-col justify-center items-center relative'>
-         <div className='container flex justify-around items-center md:items-start mt-6 flex-col md:flex-row'>
-            {footerContent.map((section, index) => (
-               <FooterSection key={index} title={section.title} links={section.links} />
-            ))}
+      <footer className='w-full bg-gray-800 relative'>
+         <div className='absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900'></div>
+         <div className='w-full text-white p-4 flex flex-col justify-center items-center relative'>
+            <div className='container flex justify-around items-center md:items-start mt-6 flex-col md:flex-row'>
+               {footerContent.map((section, index) => (
+                  <FooterSection key={index} title={section.title} links={section.links} />
+               ))}
+            </div>
+            <div className='w-92 md:w-lg lg:w-xl bg-gray-600/50 h-0.5 rounded-3xl my-8'></div>
+            <p className='text-center mb-2 text-gray-300'>© 2025 Eurotempest. All rights reserved.</p>
+            <Image
+               src='/logo-alt.svg'
+               alt='Eurotempest Logo'
+               className='w-30 md:w-12 md:absolute bottom-0 right-0 m-8'
+               width={115}
+               height={150}
+            />
          </div>
-         <div className='w-92 md:w-lg lg:w-xl bg-gray-600/50 h-0.5 rounded-3xl my-8'></div>
-         <p className='text-center mb-2'>© 2025 Eurotempest. All rights reserved.</p>
-         <Image
-            src='/logo-alt.svg'
-            alt='Eurotempest Logo'
-            className='w-30 md:w-12 md:absolute bottom-0 right-0 m-8'
-            width={115}
-            height={150}
-         />
       </footer>
    )
 }
