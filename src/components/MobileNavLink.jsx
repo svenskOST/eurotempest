@@ -38,7 +38,7 @@ export default function MobileNavLink({ href, children, className, setIsMenuOpen
                children
             )}
          </a>
-         <div className='w-1/2 min-w-70 bg-gradient-to-r from-transparent via-gray-600/50 to-transparent h-0.5 rounded-3xl'></div>
+         <div className='w-1/2 min-w-70 max-w-9/10 bg-gradient-to-r from-transparent via-gray-600/50 to-transparent h-0.5 rounded-3xl'></div>
       </>
    )
 }

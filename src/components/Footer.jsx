@@ -41,7 +41,7 @@ export default function Footer() {
                   <FooterSection key={index} title={section.title} links={section.links} />
                ))}
             </div>
-            <div className='w-lg md:w-xl lg:w-3xl bg-gradient-to-r from-transparent via-gray-600/50 to-transparent h-0.5 rounded-3xl my-8'></div>
+            <div className='w-lg md:w-xl lg:w-3xl max-w-full bg-gradient-to-r from-transparent via-gray-600/50 to-transparent h-0.5 rounded-3xl my-8'></div>
             <p className='text-center mb-2 text-gray-300'>© 2025 Eurotempest. All rights reserved.</p>
             <Image
                src='/logo-alt.svg'

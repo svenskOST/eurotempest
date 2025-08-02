@@ -42,7 +42,7 @@ export default function Navbar() {
 
    return (
       <>
-         <nav className='fixed raised-700 shadow-black top-0 w-full h-18 flex items-center justify-around bg-black/80 bg-gradient-to-r from-gray-900/75 via-red-900/25 to-gray-900/75 backdrop-blur-xs z-100'>
+         <nav className='fixed raised-500 shadow-black top-0 w-full h-18 flex items-center justify-around bg-black/70 bg-gradient-to-r from-gray-900/75 via-red-900/25 to-gray-900/75 backdrop-blur-xs z-100'>
             <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
                <div className='mx-4 w-70 lg:w-60 opacity-80'>
                   <Link href='/' onClick={() => setIsMenuOpen(false)}>

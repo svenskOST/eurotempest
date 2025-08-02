@@ -1,23 +1,17 @@
-import { Newsreader, Work_Sans } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import TailwindScreenSize from '@svenskost/tailwind-screen-size'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const newsreader = Newsreader({
+const poppins = Poppins({
    subsets: ['latin'],
-   weight: 'variable',
-   variable: '--font-paragraph',
-})
-
-const workSans = Work_Sans({
-   subsets: ['latin'],
-   weight: 'variable',
+   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
    variable: '--font-default',
 })
 
 export default function Layout({ children }) {
    return (
-      <div className={newsreader.variable + ' ' + workSans.variable}>
+      <div className={poppins.variable}>
          <TailwindScreenSize />
          <Navbar />
          <main>{children}</main>
