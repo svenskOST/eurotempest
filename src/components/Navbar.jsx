@@ -46,7 +46,7 @@ export default function Navbar() {
             <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
                <div className='mx-4 w-70 lg:w-60 opacity-80'>
                   <Link href='/' onClick={() => setIsMenuOpen(false)}>
-                     <Image src='/logo.svg' alt='Eurotempest Logo' width={827} height={44} />
+                     <Image src='/logos/logo.svg' alt='Eurotempest Logo' className='text-gray-200' width={827} height={44} />
                   </Link>
                </div>
                <div className='w-fit h-full flex items-center'>
