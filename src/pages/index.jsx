@@ -4,8 +4,8 @@ import TextType from '../components/TextType'
 export default function Home() {
    return (
       <>
-         <div className='bg-[url(/blue-background.jpg)] bg-gray-900 bg-cover bg-center min-h-screen flex justify-center items-center'>
-            <Image src='/images/blue-background.jpg' alt='Data visualization' className='text-gray-200' width={827} height={44} />
+         <div className='bg-gray-900 min-h-screen flex justify-center items-center'>
+            <Image src='/images/blue-background.jpg' alt='Data visualization' className='absolute inset-0 w-full h-full object-cover text-gray-200' width={2362} height={1329} />
             <div className='sr-only' aria-hidden='true'>
                <h1>How visible is your data?</h1>
                <h1>TEMPEST certified products</h1>
