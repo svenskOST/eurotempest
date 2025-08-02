@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="155.91" height="155.91"><svg id="SvgjsSvg1659" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155.91 155.91">
+  <defs>
+    <style>
+      .uuid-030edcca-2844-44cb-9fb5-3b0e201412f0 {
+        fill: #1d1d1b;
+      }
+
+      .uuid-9441fa30-b255-4724-a91f-4f7c5e36ba8d {
+        fill: #fff;
+      }
+
+      .uuid-d92f8216-0c2c-4294-80f0-e025539a134a {
+        fill: #e30613;
+      }
+    </style>
+  </defs>
+  <g id="SvgjsG1658" data-name="Icon">
+    <g>
+      <path class="uuid-030edcca-2844-44cb-9fb5-3b0e201412f0" d="M155.91,73.78V0h-73.59c29.07,19.56,54.1,44.66,73.59,73.78Z"></path>
+      <path class="uuid-9441fa30-b255-4724-a91f-4f7c5e36ba8d" d="M155.83,155.91h.08v-82.12C136.42,44.66,111.39,19.56,82.32,0H.59c74.34,22.64,132.91,81.43,155.24,155.91h0Z"></path>
+      <path class="uuid-d92f8216-0c2c-4294-80f0-e025539a134a" d="M.59,0h-.59v155.91h155.82C133.5,81.43,74.93,22.64.59,0Z"></path>
+    </g>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
