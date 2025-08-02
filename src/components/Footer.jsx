@@ -33,7 +33,7 @@ const footerContent = [
 
 export default function Footer() {
    return (
-      <footer className='w-full bg-gray-800 relative'>
+      <footer className='w-full bg-gray-800 relative -raised-500'>
          <div className='absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900'></div>
          <div className='w-full text-white p-4 flex flex-col justify-center items-center relative'>
             <div className='container flex justify-around items-center md:items-start mt-6 flex-col md:flex-row'>
@@ -41,7 +41,7 @@ export default function Footer() {
                   <FooterSection key={index} title={section.title} links={section.links} />
                ))}
             </div>
-            <div className='w-92 md:w-lg lg:w-xl bg-gray-600/50 h-0.5 rounded-3xl my-8'></div>
+            <div className='w-lg md:w-xl lg:w-3xl bg-gradient-to-r from-transparent via-gray-600/50 to-transparent h-0.5 rounded-3xl my-8'></div>
             <p className='text-center mb-2 text-gray-300'>© 2025 Eurotempest. All rights reserved.</p>
             <Image
                src='/logo-alt.svg'
