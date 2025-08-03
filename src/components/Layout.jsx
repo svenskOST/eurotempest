@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Poppins } from 'next/font/google'
+import { Poppins, Nunito } from 'next/font/google'
 import TailwindScreenSize from '@svenskost/tailwind-screen-size'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -8,6 +8,12 @@ const poppins = Poppins({
    subsets: ['latin'],
    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
    variable: '--font-default',
+})
+
+const nunito = Nunito({
+   subsets: ['latin'],
+   weight: 'variable',
+   variable: '--font-paragraph',
 })
 
 export default function Layout({ children }) {
@@ -55,7 +61,7 @@ export default function Layout({ children }) {
             <link rel='canonical' href='https://eurotempest.net/' />
             <link rel='icon' href='/favicon.ico' />
          </Head>
-         <div className={poppins.variable}>
+         <div className={poppins.variable + ' ' + nunito.variable}>
             <TailwindScreenSize />
             <Navbar />
             <main>{children}</main>
