@@ -104,7 +104,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`raised-700 text-700 bg-dark-600 fixed left-0 z-50 flex w-full transform flex-col items-center py-8 pt-24 transition-all duration-300 ease-in-out lg:hidden ${
+        className={`raised-700 text-600 bg-dark-600 fixed left-0 z-50 flex w-full transform flex-col items-center py-8 pt-24 transition-all duration-300 ease-in-out lg:hidden ${
           isMenuOpen
             ? 'visible translate-y-0 opacity-100'
             : 'pointer-events-none invisible -translate-y-20 opacity-0'

@@ -13,9 +13,9 @@ export default function Hero() {
         width={2362}
         height={1329}
       />
-      <div className='relative flex h-full w-full items-end justify-start pb-20 pl-15 xl:container xl:aspect-video xl:h-fit xl:pb-35 xl:pl-30'>
-        <div className='flex w-[41rem] flex-col gap-3 lg:w-[52rem] lg:gap-4'>
-          <div>
+      <div className='relative flex h-full w-full items-center justify-center md:items-end md:justify-start md:pb-20 md:pl-15 xl:container xl:aspect-video xl:h-fit xl:pb-35 xl:pl-30'>
+        <div className='flex w-full flex-col gap-10 px-3 md:w-[41rem] md:gap-5 md:px-0 lg:w-[52rem] lg:gap-4'>
+          <div className='flex flex-col items-center md:block'>
             <div className='sr-only' aria-hidden='true'>
               <h1>How visible is your data?</h1>
               <h1>TEMPEST-certified products</h1>
@@ -33,23 +33,23 @@ export default function Hero() {
               showCursor={true}
               cursorCharacter='|'
               textColors={['#d1d5dc']}
-              className='lg:text-700 text-500 weight-600'
+              className='lg:text-700 text-500 weight-600 mb-4 md:mb-2'
               cursorClassName='text-light-600'
             />
-            <p className='lg:text-400 text-light-500'>
+            <p className='lg:text-400 text-light-500 text-200'>
               Protect your information systems and communications from
               unauthorized interception. Our TEMPEST-certified products ensure
               no emanations are leaked.
             </p>
           </div>
-          <div className='flex w-full gap-4 lg:gap-6'>
+          <div className='flex w-full items-center justify-center gap-5 md:justify-start lg:gap-6'>
             <PrimaryButton href='/products'>
               Explore Products
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
                 fill='currentColor'
-                className='size-6'
+                className='size-5 md:size-6'
               >
                 <path
                   fillRule='evenodd'
@@ -63,7 +63,7 @@ export default function Hero() {
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
                 fill='currentColor'
-                className='size-6'
+                className='size-5 md:size-6'
               >
                 <path d='M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z' />
               </svg>
