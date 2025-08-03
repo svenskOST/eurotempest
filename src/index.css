@@ -59,8 +59,7 @@
    --weight-800: 800;
    --weight-900: 900;
 
-   --font-default: var(--font-default);
-   --font-paragraph: var(--font-paragraph);
+   --font-inter: var(--font-inter);
 }
 
 @utility weight-* {
@@ -109,6 +108,6 @@
 
 @layer base {
    * {
-      @apply font-default;
+      @apply font-inter;
    }
 }

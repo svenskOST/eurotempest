@@ -5,9 +5,9 @@ import SecondaryButton from './SecondaryButton'
 
 export default function Hero() {
    return (
-      <div className='bg-gray-900 min-h-screen flex justify-center items-center relative'>
+      <div className='bg-gray-900 min-h-screen flex justify-start items-end pl-20 pb-30 relative'>
          <Image
-            src='/images/blue-background.jpg'
+            src='/images/dark-background.jpg'
             alt='Data visualization'
             className='absolute inset-0 w-full h-full object-cover'
             width={2362}
@@ -35,7 +35,7 @@ export default function Hero() {
                   className='text-800 weight-600 text-shadow-sm/30 text-center'
                   cursorClassName='text-gray-300 weight-400'
                />
-               <p className='text-gray-200 weight-500 text-500 text-shadow-sm/30 font-paragraph w-4/5'>
+               <p className='text-gray-200 weight-400 text-500 text-shadow-sm/30 font-paragraph w-4/5'>
                   Protect your information systems and communications from unauthorized
                   interception. Our TEMPEST-certified products ensure no emanations are leaked.
                </p>
