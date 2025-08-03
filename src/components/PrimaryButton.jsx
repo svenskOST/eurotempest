@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 export default function PrimaryButton({ href, children }) {
-   return (
-      <Link
-         href={href}
-         className='bg-red-800 active:scale-95 active:raised-300 transition hover:scale-105 hover:raised-700 raised-500 text-gray-100 text-500 weight-500 px-6 py-4 rounded-lg flex gap-2 items-center'
-      >
-         {children}
-      </Link>
-   )
+  return (
+    <Link
+      href={href}
+      className='active:raised-300 hover:raised-700 raised-500 text-500 weight-500 flex items-center gap-2 rounded-lg bg-red-800 px-6 py-4 text-gray-100 transition hover:scale-105 active:scale-95'
+    >
+      {children}
+    </Link>
+  )
 }

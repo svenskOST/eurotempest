@@ -1,10 +1,9 @@
 import Image from 'next/image'
 
 export default function Credentials() {
-   return (
-      <>
-         <div className='bg-neutral-100 min-h-screen flex items-center'>
-         </div>
-      </>
-   )
+  return (
+    <>
+      <div className='flex min-h-screen items-center bg-neutral-100'></div>
+    </>
+  )
 }
