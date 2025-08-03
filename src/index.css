@@ -1,44 +1,19 @@
 @import 'tailwindcss';
 
-/*
-   Usage guide:
-
-   Setting colors:
-      text-(color) - text color
-      bg-(color) - background color
-      border-(color) - border color
-      shadow-(color) - shadow color
-
-      Custom palette:
-         neutral-(100-900)
-         primary-(100-900)
-         accent-green-(100-900)
-         accent-red-(100-900)
-         accent-yellow-(100-900)
-
-   Typography:
-      text-(100-900) - font size
-      weight-(100-900) - font weight
-      font-(display|body|mono|somethingElse) - font family
-      leading(none|tight|snug|normal|relaxed|loose) - line height
-      tracking-(tighter|tight|normal|wide|wider|widest) - letter spacing
-      text-(left|center|right|justify) - text align
-      hyphens-(none|manual|auto) - hyphens
-      line-clamp-(number) - truncate text
-
-   Custom scale:
-      w/h/m/p-(0-16)
-      t/r/b/l-(0-16)
-      & more-(0-16)
-
-   Other common utilities:
-      (block|hidden|flex|grid|&more) - display
-      (static|fixed|absolute|relative|sticky) - positioning
-      border-(2-8)|(dashed|full) - border width and style
-      rounded-(xs-4xl|full)- border-radius
-*/
-
 @theme {
+  --color-primary-300: #e7000b; /*red-600*/
+  --color-primary-700: #9f0712; /*red-800*/
+
+  --color-light-100: #ffffff; /*white*/
+  --color-light-300: #e5e7eb; /*gray-200*/
+  --color-light-400: #d1d5dc; /*gray-300*/
+  --color-light-500: #99a1af; /*gray-400*/
+  --color-light-600: #4a5565; /*gray-600*/
+
+  --color-dark-600: #1e2939; /*gray-800*/
+  --color-dark-700: #101828; /*gray-900 */
+  --color-dark-900: #000000; /*black*/
+
   --text-100: 0.875rem;
   --text-200: 1rem;
   --text-300: 1.125rem;

@@ -42,14 +42,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='raised-500 fixed top-0 z-100 flex h-18 w-full items-center justify-around bg-black/70 bg-gradient-to-r from-gray-900/75 via-red-900/25 to-gray-900/75 shadow-black backdrop-blur-xs'>
+      <nav className='raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-800/75 shadow-dark-900 fixed top-0 z-100 flex h-18 w-full items-center justify-around bg-gradient-to-r backdrop-blur-xs'>
         <div className='container flex h-full items-center justify-between px-4 xl:px-10'>
           <div className='mx-4 w-70 opacity-80 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
               <Image
                 src='/logos/logo.svg'
                 alt='Eurotempest Logo'
-                className='text-gray-200'
+                className='text-light-300'
                 width={827}
                 height={44}
               />
@@ -60,7 +60,7 @@ export default function Navbar() {
               <button
                 ref={buttonRef}
                 onClick={toggleMenu}
-                className='flex h-12 w-14 cursor-pointer items-center justify-center rounded-md text-gray-200 transition-colors duration-300 hover:bg-red-900/50'
+                className='text-light-300 hover:bg-primary-300/50 flex h-12 w-14 cursor-pointer items-center justify-center rounded-md transition-colors duration-300'
                 aria-label='Toggle menu'
                 aria-expanded={isMenuOpen}
               >
@@ -104,7 +104,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`raised-700 text-700 fixed left-0 z-50 flex w-full transform flex-col items-center bg-gray-800 py-8 pt-24 transition-all duration-300 ease-in-out lg:hidden ${
+        className={`raised-700 text-700 bg-dark-600 fixed left-0 z-50 flex w-full transform flex-col items-center py-8 pt-24 transition-all duration-300 ease-in-out lg:hidden ${
           isMenuOpen
             ? 'visible translate-y-0 opacity-100'
             : 'pointer-events-none invisible -translate-y-20 opacity-0'

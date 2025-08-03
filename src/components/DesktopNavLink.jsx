@@ -24,8 +24,8 @@ export default function NavLink({ href, children, className, setIsMenuOpen }) {
     <a
       href={href}
       onClick={handleClick}
-      className={`flex h-full items-center justify-center px-6 transition-all duration-200 hover:text-red-600/90 xl:px-7 ${
-        isActive(href) ? 'text-red-600/90' : 'text-gray-200'
+      className={`hover:text-primary-300/90 flex h-full items-center justify-center px-6 transition-all duration-200 xl:px-7 ${
+        isActive(href) ? 'text-primary-300/90' : 'text-light-300'
       } ${className} group relative`}
       aria-busy={isNavigating}
     >
@@ -33,10 +33,10 @@ export default function NavLink({ href, children, className, setIsMenuOpen }) {
         <span className='relative'>
           {children}
           {isNavigating && (
-            <span className='absolute -right-7 h-5 w-5 translate-y-1 animate-spin rounded-full border-3 border-red-600/80 border-t-red-600/20'></span>
+            <span className='border-primary-300/80 border-t-primary-300/20 absolute -right-7 h-5 w-5 translate-y-1 animate-spin rounded-full border-3'></span>
           )}
         </span>
-        <span className='absolute -bottom-1 left-0 h-[2px] w-0 bg-red-600/90 transition-[width] duration-200 group-hover:w-full'></span>
+        <span className='bg-primary-300/90 absolute -bottom-1 left-0 h-[2px] w-0 transition-[width] duration-200 group-hover:w-full'></span>
       </div>
     </a>
   )
