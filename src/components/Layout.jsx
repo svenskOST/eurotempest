@@ -1,13 +1,19 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
+import { Montserrat, Inter } from 'next/font/google'
 import TailwindScreenSize from '@svenskost/tailwind-screen-size'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const inter = Inter({
+const display = Montserrat({
   subsets: ['latin'],
   weight: 'variable',
-  variable: '--font-inter',
+  variable: '--font-display',
+})
+
+const body = Inter({
+  subsets: ['latin'],
+  weight: 'variable',
+  variable: '--font-body',
 })
 
 export default function Layout({ children }) {
@@ -21,16 +27,8 @@ export default function Layout({ children }) {
           content='TEMPEST certified, NATO, data security, government, defense, cybersecurity, secure solutions'
         />
         <title>Leading TEMPEST Supplier in Europe | Eurotempest</title>
-        <meta
-          property='og:title'
-          key='og-title'
-          content='Leading TEMPEST Supplier in Europe'
-        />
-        <meta
-          property='twitter:title'
-          key='twitter-title'
-          content='Leading TEMPEST Supplier in Europe'
-        />
+        <meta property='og:title' key='og-title' content='Leading TEMPEST Supplier in Europe' />
+        <meta property='twitter:title' key='twitter-title' content='Leading TEMPEST Supplier in Europe' />
         <meta
           name='description'
           key='description'
@@ -59,7 +57,7 @@ export default function Layout({ children }) {
         <link rel='canonical' href='https://eurotempest.net/' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={inter.variable}>
+      <div className={display.variable + ' ' + body.variable}>
         <TailwindScreenSize />
         <Navbar />
         <main>{children}</main>

@@ -1,12 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-export default function MobileNavLink({
-  href,
-  children,
-  className,
-  setIsMenuOpen,
-}) {
+export default function MobileNavLink({ href, children, className, setIsMenuOpen }) {
   const router = useRouter()
   const [isNavigating, setIsNavigating] = useState(false)
   const isActive = path => router.pathname === path

@@ -38,17 +38,11 @@ export default function Footer() {
       <div className='relative flex w-full flex-col items-center justify-center p-4'>
         <div className='container mt-6 flex flex-col items-center justify-around md:flex-row md:items-start'>
           {footerContent.map((section, index) => (
-            <FooterSection
-              key={index}
-              title={section.title}
-              links={section.links}
-            />
+            <FooterSection key={index} title={section.title} links={section.links} />
           ))}
         </div>
         <div className='via-light-300/50 my-8 h-0.5 w-lg max-w-full rounded-3xl bg-gradient-to-r from-transparent to-transparent md:w-xl lg:w-3xl'></div>
-        <p className='text-light-500 mb-2 text-center'>
-          © 2025 Eurotempest. All rights reserved.
-        </p>
+        <p className='text-light-500 mb-2 text-center'>© 2025 Eurotempest. All rights reserved.</p>
         <Image
           src='/logos/logo-alt.svg'
           alt='Eurotempest Logo'

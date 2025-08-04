@@ -82,9 +82,7 @@ const TextType = ({
     let timeout
 
     const currentText = textArray[currentTextIndex]
-    const processedText = reverseMode
-      ? currentText.split('').reverse().join('')
-      : currentText
+    const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText
 
     const executeTypingAnimation = () => {
       if (isDeleting) {
@@ -148,9 +146,7 @@ const TextType = ({
     onSentenceComplete,
   ])
 
-  const shouldHideCursor =
-    hideCursorWhileTyping &&
-    (currentCharIndex < textArray[currentTextIndex].length || isDeleting)
+  const shouldHideCursor = hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting)
 
   return createElement(
     Component,
@@ -159,16 +155,11 @@ const TextType = ({
       className: `inline-block whitespace-pre-wrap ${className}`,
       ...props,
     },
-    <span className='inline' style={{ color: getCurrentTextColor() }}>
+    <span className='font-display inline' style={{ color: getCurrentTextColor() }}>
       {displayedText}
     </span>,
     showCursor && (
-      <span
-        ref={cursorRef}
-        className={`ml-1 opacity-100 ${
-          shouldHideCursor ? 'hidden' : ''
-        } ${cursorClassName}`}
-      >
+      <span ref={cursorRef} className={`font-display ml-1 opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${cursorClassName}`}>
         {cursorCharacter}
       </span>
     ),

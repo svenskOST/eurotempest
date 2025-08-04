@@ -30,6 +30,7 @@
     "jsxSingleQuote": true,
     "singleQuote": true,
     "semi": false,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "printWidth": 140
   }
 }
