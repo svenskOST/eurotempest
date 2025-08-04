@@ -25,7 +25,7 @@ export default function MobileNavLink({ href, children, className, setIsMenuOpen
       <a
         href={href}
         onClick={handleClick}
-        className={`hover:text-primary-300/90 flex h-full items-center justify-center px-18 py-3 transition-colors duration-300 ${
+        className={`hover:text-primary-300/90 font-display weight-500 flex h-full items-center justify-center px-18 py-3 transition-colors duration-300 ${
           isActive(href) ? 'text-light-600' : 'text-light-400'
         } ${className} relative`}
         aria-busy={isNavigating}

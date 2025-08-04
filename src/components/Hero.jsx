@@ -2,20 +2,22 @@ import Image from 'next/image'
 import TextType from '../components/TextType'
 import PrimaryButton from './PrimaryButton'
 import SecondaryButton from './SecondaryButton'
+import { IoArrowForwardCircle } from 'react-icons/io5'
+import { IoIosSend } from 'react-icons/io'
 
 export default function Hero() {
   return (
-    <div className='bg-dark-700 relative flex h-screen items-center justify-center'>
+    <div className='bg-light-300 relative flex min-h-[80vh] items-end justify-center'>
       <Image
         src='/images/dark-background.jpg'
         alt='Data visualization'
-        className='absolute inset-0 h-full w-full object-cover'
+        className='absolute h-full w-full rounded-b-[50px] object-cover md:rounded-b-[60px] xl:w-9/10 xl:rounded-b-[70px] 2xl:rounded-b-[80px]'
         width={2362}
         height={1329}
       />
-      <div className='relative flex h-full w-full items-center justify-center md:items-end md:justify-start md:pb-20 md:pl-15 xl:container xl:aspect-video xl:h-fit xl:pb-35 xl:pl-30'>
-        <div className='flex w-full flex-col gap-10 px-3 md:w-[41rem] md:gap-5 md:px-0 lg:w-[52rem] lg:gap-4'>
-          <div className='flex flex-col items-center md:block'>
+      <div className='relative flex h-full w-full justify-center py-50 xl:container xl:justify-start xl:pb-28 xl:pl-40 2xl:pl-20'>
+        <div className='flex w-full flex-col gap-10 px-3 md:w-[46rem] md:gap-5 md:px-0 lg:w-[52rem] lg:gap-7 xl:w-[60rem]'>
+          <div className='flex flex-col items-center xl:block'>
             <div className='sr-only' aria-hidden='true'>
               <h1>How visible is your data?</h1>
               <h1>TEMPEST-certified products</h1>
@@ -28,30 +30,23 @@ export default function Hero() {
               deletingSpeed={30}
               showCursor={true}
               cursorCharacter='|'
-              textColors={['#d1d5dc']}
-              className='lg:text-700 text-500 weight-600 mb-4 md:mb-2'
-              cursorClassName='text-light-600'
+              textColors={['#e5e7eb']}
+              className='lg:text-700 text-600 weight-700 mb-4 lg:mb-6'
+              cursorClassName='text-light-500 weight-500'
             />
-            <p className='lg:text-400 text-light-500 text-200'>
-              Protect your information systems and communications from unauthorized interception. Our TEMPEST-certified products ensure no
+            <p className='lg:text-400 text-light-400 text-300 text-center leading-relaxed xl:w-[52rem] xl:text-start'>
+              Protect your information- and communication systems from unauthorized interception. Our TEMPEST-certified products ensures no
               emanations are leaked.
             </p>
           </div>
-          <div className='flex w-full items-center justify-center gap-5 md:justify-start lg:gap-6'>
+          <div className='flex w-full items-center justify-center gap-6 lg:gap-8 xl:justify-start'>
             <PrimaryButton href='/products'>
               Explore Products
-              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' className='size-5 md:size-6'>
-                <path
-                  fillRule='evenodd'
-                  d='M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z'
-                />
-              </svg>
+              <IoArrowForwardCircle className='size-6 lg:size-8' />
             </PrimaryButton>
             <SecondaryButton href='/contact'>
               Contact Us
-              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' className='size-5 md:size-6'>
-                <path d='M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z' />
-              </svg>
+              <IoIosSend className='size-6 lg:size-8' />
             </SecondaryButton>
           </div>
         </div>

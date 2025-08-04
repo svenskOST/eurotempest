@@ -30,7 +30,7 @@ export default function NavLink({ href, children, className, setIsMenuOpen }) {
       aria-busy={isNavigating}
     >
       <div className='weight-500 text-200 xl:text-300 relative flex items-center justify-center'>
-        <span className='relative'>
+        <span className='relative font-display'>
           {children}
           {isNavigating && (
             <span className='border-primary-300/80 border-t-primary-300/20 absolute -right-7 h-5 w-5 translate-y-1 animate-spin rounded-full border-3'></span>
