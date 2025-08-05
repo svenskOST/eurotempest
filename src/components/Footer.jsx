@@ -1,35 +1,8 @@
-import FooterSection from './FooterSection'
+import FooterSection from './ui/FooterSection'
 import Image from 'next/image'
+import data from '../data.json'
 
-const footerContent = [
-  {
-    title: 'Company',
-    links: [
-      { href: '/about', text: 'About' },
-      { href: '/credentials', text: 'Credentials' },
-      { href: '/news', text: 'News' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { href: '/products/computers', text: 'Computers' },
-      { href: '/products/ip-phones', text: 'IP Phones' },
-      { href: '/products/laptops', text: 'Laptops' },
-      { href: '/products/monitors', text: 'Monitors' },
-      { href: '/products/printers', text: 'Printers' },
-      { href: '/products/scanners', text: 'Scanners' },
-    ],
-  },
-  {
-    title: 'Support',
-    links: [
-      { href: '/contact', text: 'Contact' },
-      { href: '/faq', text: 'FAQ' },
-      { href: '/rma-ticket', text: 'RMA Ticket' },
-    ],
-  },
-]
+const sections = data.footerSections
 
 export default function Footer() {
   return (
@@ -37,7 +10,7 @@ export default function Footer() {
       <div className='from-dark-700 via-dark-600 to-dark-700 absolute inset-0 bg-gradient-to-r'></div>
       <div className='relative flex w-full flex-col items-center justify-center p-4'>
         <div className='container mt-6 flex flex-col items-center justify-around md:flex-row md:items-start'>
-          {footerContent.map((section, index) => (
+          {sections.map((section, index) => (
             <FooterSection key={index} title={section.title} links={section.links} />
           ))}
         </div>

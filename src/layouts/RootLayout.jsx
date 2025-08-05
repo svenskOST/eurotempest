@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { Montserrat, Inter } from 'next/font/google'
 import TailwindScreenSize from '@svenskost/tailwind-screen-size'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const display = Montserrat({
   subsets: ['latin'],

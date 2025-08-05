@@ -1,0 +1,57 @@
+{
+  "navLinks": [
+    { "text": "Home", "href": "/" },
+    { "text": "Credentials", "href": "/credentials" },
+    { "text": "About", "href": "/about" },
+    { "text": "Products", "href": "/products" },
+    { "text": "Contact", "href": "/contact" },
+    { "text": "News", "href": "/news" }
+  ],
+  "footerSections": [
+    {
+      "title": "Company",
+      "links": [
+        { "text": "About", "href": "/about" },
+        { "text": "Credentials", "href": "/credentials" },
+        { "text": "News", "href": "/news" }
+      ]
+    },
+    {
+      "title": "Products",
+      "links": [
+        { "text": "Computers", "href": "/products/computers" },
+        { "text": "IP Phones", "href": "/products/ip-phones" },
+        { "text": "Laptops", "href": "/products/laptops" },
+        { "text": "Monitors", "href": "/products/monitors" },
+        { "text": "Printers", "href": "/products/printers" },
+        { "text": "Scanners", "href": "/products/scanners" }
+      ]
+    },
+    {
+      "title": "Support",
+      "links": [
+        { "text": "Contact", "href": "/contact" },
+        { "text": "FAQ", "href": "/faq" },
+        { "text": "RMA Ticket", "href": "/rma-ticket" }
+      ]
+    }
+  ],
+  "hero": {
+    "image": "/images/connected-data.jpg",
+    "titles": ["How visible is your data?", "TEMPEST-certified products", "Secure solutions for government and defense"],
+    "description": "Protect your information- and communication systems from unauthorized interception. Our TEMPEST-certified products ensure no emanations are leaked.",
+    "buttons": [
+      {
+        "text": "Explore Products",
+        "href": "/products",
+        "type": "primary"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/contact",
+        "type": "secondary"
+      }
+    ]
+  },
+  "carouselItems": ["Item 1", "Item 2", "Item 3"]
+}

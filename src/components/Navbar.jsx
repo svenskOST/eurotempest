@@ -1,17 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import DesktopNavLink from './DesktopNavLink'
-import MobileNavLink from './MobileNavLink'
+import DesktopNavLink from './ui/DesktopNavLink'
+import MobileNavLink from './ui/MobileNavLink'
+import data from '../data.json'
 
-const navLinks = [
-  { href: '/', text: 'Home' },
-  { href: '/credentials', text: 'Credentials' },
-  { href: '/about', text: 'About' },
-  { href: '/products', text: 'Products' },
-  { href: '/contact', text: 'Contact' },
-  { href: '/news', text: 'News' },
-]
+const navLinks = data.navLinks
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
