@@ -8,8 +8,8 @@ const icons = [<IoArrowForwardCircle className='size-6 lg:size-8' />, <IoIosSend
 
 export default function Hero() {
   return (
-    <div className='bg-light-300 flex min-h-[110vh] justify-center lg:min-h-0'>
-      <div className='raised-500 lg:raised-700 absolute flex h-[110vh] w-full items-end justify-center bg-[url(/images/dark-keyboard.jpg)] bg-cover bg-center pb-50 md:pb-30 lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:justify-start xl:rounded-b-4xl xl:p-20'>
+    <section className='bg-light-300 flex min-h-screen justify-center lg:min-h-0'>
+      <div className='raised-500 lg:raised-700 absolute flex h-screen w-full items-end justify-center bg-[url(/images/dark-keyboard.jpg)] bg-cover bg-center pb-50 md:pb-30 lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:justify-start xl:rounded-b-4xl xl:p-20'>
         <div className='flex w-full flex-col gap-10 px-2 md:w-[46rem] md:gap-5 md:px-0 lg:w-[55rem] lg:gap-7'>
           <div className='flex flex-col items-center xl:block'>
             <div className='sr-only' aria-hidden='true'>
@@ -30,7 +30,7 @@ export default function Hero() {
             />
             <p className='lg:text-300 text-light-400 text-300 text-center leading-relaxed lg:w-[46rem] xl:text-start'>{hero.description}</p>
           </div>
-          <div className='flex w-full items-center justify-center flex-wrap gap-4 md:gap-6 lg:gap-8 xl:justify-start'>
+          <div className='flex w-full flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-8 xl:justify-start'>
             {hero.buttons.map((btn, index) => (
               <Button key={index} href={btn.href} type={btn.type}>
                 {btn.text}
@@ -40,6 +40,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
