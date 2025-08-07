@@ -3,9 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
-import data from '../data.json'
-
-const navLinks = data.navLinks
+import { navLinks } from '../data/layout.json'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

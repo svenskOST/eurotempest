@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "image": "/images/dark-keyboard.jpg",
+    "titles": ["How visible is your data?", "TEMPEST-certified products", "Secure solutions for government and defense"],
+    "description": "Protect your information- and communication systems from unauthorized interception. Our TEMPEST-certified products ensure no emanations are leaked.",
+    "buttons": [
+      {
+        "text": "Explore Products",
+        "href": "/products",
+        "type": "primary"
+      },
+      {
+        "text": "Contact Us",
+        "href": "/contact",
+        "type": "secondary"
+      }
+    ]
+  },
+  "carouselItems": ["Item 1", "Item 2", "Item 3"]
+}
