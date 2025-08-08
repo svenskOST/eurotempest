@@ -1,3 +1,4 @@
+import Section from './Section'
 import SectionTitle from './ui/SectionTitle'
 import FeatureSection from './ui/FeatureSection'
 
@@ -10,18 +11,18 @@ const data = {
     },
     {
       list: ['Rigid testing and quality assurance in dedicated labs', 'Secure products for all your needs', 'Living up to NATO standards'],
-      image: { src: '/images/earth.jpg', alt: 'Earth seen from space' },
+      image: { src: '/images/tempest-lab.png', alt: 'Earth seen from space' },
     },
   ],
 }
 
 export default function Features() {
   return (
-    <div className='bg-light-300 flex h-screen flex-col items-center justify-center'>
+    <Section>
       <SectionTitle title={data.title} />
       {data.sections.map((section, index) => (
-        <FeatureSection key={index} list={section.list} image={section.image} />
+        <FeatureSection key={index} reverse={index % 2 == 0 ? true : false} list={section.list} image={section.image} />
       ))}
-    </div>
+    </Section>
   )
 }

@@ -10,6 +10,7 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { RiServiceFill } from 'react-icons/ri'
 import { PiCertificateFill } from 'react-icons/pi'
 import { BsQuestionCircleFill } from 'react-icons/bs'
+import Section from './Section'
 
 const data = {
   title: 'Why Eurotempest?',
@@ -91,28 +92,26 @@ const options = {
 
 export default function Carousel() {
   return (
-    <section className='bg-light-300 flex min-h-screen flex-col items-center justify-center gap-20'>
-      <div className='container'>
-        <SectionTitle title={data.title} />
-        <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-full' options={options}>
-          <SplideTrack>
-            {data.cards.map((card, index) => (
-              <CarouselCard
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-                button={
-                  <Button href={card.button.href} type={card.button.type}>
-                    {card.button.text}
-                    {<card.button.icon className='size-6 lg:size-8' />}
-                  </Button>
-                }
-              />
-            ))}
-          </SplideTrack>
-        </Splide>
-      </div>
-    </section>
+    <Section>
+      <SectionTitle title={data.title} />
+      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-full' options={options}>
+        <SplideTrack>
+          {data.cards.map((card, index) => (
+            <CarouselCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+              button={
+                <Button href={card.button.href} type={card.button.type}>
+                  {card.button.text}
+                  {<card.button.icon className='size-6 lg:size-8' />}
+                </Button>
+              }
+            />
+          ))}
+        </SplideTrack>
+      </Splide>
+    </Section>
   )
 }
