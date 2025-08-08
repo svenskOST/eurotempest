@@ -1,6 +1,6 @@
 import { SplideSlide } from '@splidejs/react-splide'
 
-export default function CarouselItem({ icon: Icon, title, description }) {
+export default function CarouselCard({ icon: Icon, title, description, button }) {
   return (
     <SplideSlide>
       <div className='flex h-full flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg'>
@@ -9,6 +9,7 @@ export default function CarouselItem({ icon: Icon, title, description }) {
         </div>
         <h3 className='text-dark-800 mb-2 text-xl font-semibold'>{title}</h3>
         <p className='text-dark-600 flex-grow'>{description}</p>
+        {button}
       </div>
     </SplideSlide>
   )

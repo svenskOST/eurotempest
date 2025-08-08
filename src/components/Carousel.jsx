@@ -1,40 +1,58 @@
 import { Splide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
-import CarouselItem from './ui/CarouselItem'
-import { FiLayers, FiCode, FiShield, FiGlobe, FiCpu, FiDatabase } from 'react-icons/fi'
+import CarouselCard from './ui/CarouselCard'
+import Button from './ui/Button'
+import { IoArrowForwardCircle } from 'react-icons/io5'
 
-const data = [
-  {
-    icon: FiLayers,
-    title: 'Modern Stack',
-    description: 'Built with the latest technologies for optimal performance and developer experience.',
-  },
-  {
-    icon: FiCode,
-    title: 'Clean Code',
-    description: 'Well-structured and maintainable code following best practices and patterns.',
-  },
-  {
-    icon: FiShield,
-    title: 'Secure',
-    description: 'Industry-standard security practices to keep your data safe and protected.',
-  },
-  {
-    icon: FiGlobe,
-    title: 'Global Reach',
-    description: 'Optimized for performance across all devices and locations worldwide.',
-  },
-  {
-    icon: FiCpu,
-    title: 'High Performance',
-    description: 'Lightning-fast load times and smooth interactions for the best user experience.',
-  },
-  {
-    icon: FiDatabase,
-    title: 'Scalable',
-    description: 'Designed to grow with your needs, handling increased load with ease.',
-  },
-]
+const data = {
+  title: 'Why Eurotempest?',
+  cards: [
+    {
+      icon: IoArrowForwardCircle,
+      title: 'Protect Your Operations',
+      description: 'Consumer electronics radiate signals that are prone to hostile surveillance. Ours do not.',
+      button: {
+        text: 'Learn More',
+        icon: IoArrowForwardCircle,
+        href: '/products',
+        type: 'primary',
+      },
+    },
+    {
+      icon: IoArrowForwardCircle,
+      title: 'Trusted Leader in Europe',
+      description: 'Eurotempest has been the number one TEMPEST-supplier in Europe since 2004.',
+      button: {
+        text: 'Find Out Why',
+        icon: IoArrowForwardCircle,
+        href: '/about',
+        type: 'primary',
+      },
+    },
+    {
+      icon: IoArrowForwardCircle,
+      title: 'State-of-the-art Security',
+      description: 'Our proven methods are backed by numerous official certificates.',
+      button: {
+        text: 'See Certificates',
+        icon: IoArrowForwardCircle,
+        href: '/credentials',
+        type: 'primary',
+      },
+    },
+    {
+      icon: IoArrowForwardCircle,
+      title: 'Always at Your Service',
+      description: 'We strive to meet your particular needs and provide support in any way possible.',
+      button: {
+        text: "Let's Talk",
+        icon: IoArrowForwardCircle,
+        href: '/contact',
+        type: 'primary',
+      },
+    },
+  ],
+}
 
 const options = {
   type: 'loop',
@@ -66,11 +84,23 @@ const options = {
 
 export default function Carousel() {
   return (
-    <div className='bg-light-300 flex h-screen items-center justify-center'>
-      <Splide aria-label='My Favorite Images' hasTrack={false} className='w-1/2' options={options}>
+    <div className='bg-light-300 flex h-screen flex-col items-center justify-center'>
+      <h1>{data.title}</h1>
+      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-1/2' options={options}>
         <SplideTrack>
-          {data.map((card, index) => (
-            <CarouselItem key={index} icon={card.icon} title={card.title} description={card.description} />
+          {data.cards.map((card, index) => (
+            <CarouselCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+              button={
+                <Button href={card.button.href} type={card.button.type}>
+                  {card.button.text}
+                  {<card.button.icon className='size-6 lg:size-8' />}
+                </Button>
+              }
+            />
           ))}
         </SplideTrack>
       </Splide>
