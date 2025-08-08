@@ -26,8 +26,8 @@ const data = {
 export default function Hero() {
   return (
     <section className='bg-light-300 flex min-h-screen justify-center lg:min-h-0'>
-      <div className='raised-500 lg:raised-700 absolute flex h-screen w-full items-end justify-center bg-[url(/images/dark-keyboard.jpg)] bg-cover bg-center pb-50 md:pb-30 lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:justify-start xl:rounded-b-4xl xl:p-20'>
-        <div className='flex w-full flex-col gap-10 px-2 md:w-[46rem] md:gap-5 md:px-0 lg:w-[55rem] lg:gap-7'>
+      <div className='raised-500 lg:raised-700 absolute flex h-screen w-full items-center justify-center bg-[url(/images/dark-keyboard.jpg)] bg-cover bg-center lg:relative lg:aspect-2/1 lg:h-fit xl:items-end xl:container xl:w-9/10 xl:justify-start xl:rounded-b-4xl xl:p-20'>
+        <div className='flex w-full flex-col gap-10 px-2 md:w-[46rem] md:gap-5 md:px-0 lg:w-[55rem] lg:gap-7 translate-y-10 xl:translate-y-0'>
           <div className='flex flex-col items-center xl:block'>
             <div className='sr-only' aria-hidden='true'>
               <h1>{data.titles[0]}</h1>

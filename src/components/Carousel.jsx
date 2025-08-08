@@ -84,26 +84,28 @@ const options = {
 
 export default function Carousel() {
   return (
-    <div className='bg-light-300 flex h-screen flex-col items-center justify-center'>
-      <h1>{data.title}</h1>
-      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-1/2' options={options}>
-        <SplideTrack>
-          {data.cards.map((card, index) => (
-            <CarouselCard
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-              button={
-                <Button href={card.button.href} type={card.button.type}>
-                  {card.button.text}
-                  {<card.button.icon className='size-6 lg:size-8' />}
-                </Button>
-              }
-            />
-          ))}
-        </SplideTrack>
-      </Splide>
-    </div>
+    <section className='bg-light-300 flex min-h-screen flex-col items-center justify-center gap-20'>
+      <div className='container'>
+        <h1 className='text-600 sm:text-700 md:text-800 text-dark-800 font-display weight-600'>{data.title}</h1>
+        <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-full' options={options}>
+          <SplideTrack>
+            {data.cards.map((card, index) => (
+              <CarouselCard
+                key={index}
+                icon={card.icon}
+                title={card.title}
+                description={card.description}
+                button={
+                  <Button href={card.button.href} type={card.button.type}>
+                    {card.button.text}
+                    {<card.button.icon className='size-6 lg:size-8' />}
+                  </Button>
+                }
+              />
+            ))}
+          </SplideTrack>
+        </Splide>
+      </div>
+    </section>
   )
 }
