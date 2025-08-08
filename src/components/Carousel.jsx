@@ -1,52 +1,59 @@
 import { Splide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
+import SectionTitle from './ui/SectionTitle'
 import CarouselCard from './ui/CarouselCard'
 import Button from './ui/Button'
-import { IoArrowForwardCircle } from 'react-icons/io5'
+import { IoShieldCheckmark } from 'react-icons/io5'
+import { MdLeaderboard, MdQuestionAnswer } from 'react-icons/md'
+import { FaBuildingLock } from 'react-icons/fa6'
+import { FaInfoCircle } from 'react-icons/fa'
+import { RiServiceFill } from 'react-icons/ri'
+import { PiCertificateFill } from 'react-icons/pi'
+import { BsQuestionCircleFill } from 'react-icons/bs'
 
 const data = {
   title: 'Why Eurotempest?',
   cards: [
     {
-      icon: IoArrowForwardCircle,
+      icon: FaBuildingLock,
       title: 'Protect Your Operations',
       description: 'Consumer electronics radiate signals that are prone to hostile surveillance. Ours do not.',
       button: {
         text: 'Learn More',
-        icon: IoArrowForwardCircle,
+        icon: FaInfoCircle,
         href: '/products',
         type: 'primary',
       },
     },
     {
-      icon: IoArrowForwardCircle,
+      icon: MdLeaderboard,
       title: 'Trusted Leader in Europe',
       description: 'Eurotempest has been the number one TEMPEST-supplier in Europe since 2004.',
       button: {
         text: 'Find Out Why',
-        icon: IoArrowForwardCircle,
+        icon: BsQuestionCircleFill,
         href: '/about',
         type: 'primary',
       },
     },
     {
-      icon: IoArrowForwardCircle,
+      icon: IoShieldCheckmark,
       title: 'State-of-the-art Security',
       description: 'Our proven methods are backed by numerous official certificates.',
       button: {
         text: 'See Certificates',
-        icon: IoArrowForwardCircle,
+        icon: PiCertificateFill,
         href: '/credentials',
         type: 'primary',
       },
     },
     {
-      icon: IoArrowForwardCircle,
+      icon: RiServiceFill,
       title: 'Always at Your Service',
       description: 'We strive to meet your particular needs and provide support in any way possible.',
       button: {
         text: "Let's Talk",
-        icon: IoArrowForwardCircle,
+        icon: MdQuestionAnswer,
         href: '/contact',
         type: 'primary',
       },
@@ -86,7 +93,7 @@ export default function Carousel() {
   return (
     <section className='bg-light-300 flex min-h-screen flex-col items-center justify-center gap-20'>
       <div className='container'>
-        <h1 className='text-600 sm:text-700 md:text-800 text-dark-800 font-display weight-600'>{data.title}</h1>
+        <SectionTitle title={data.title} />
         <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-full' options={options}>
           <SplideTrack>
             {data.cards.map((card, index) => (

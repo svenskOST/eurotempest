@@ -4,14 +4,17 @@ import Image from 'next/image'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
 
-const data = [
-  { text: 'Home', href: '/' },
-  { text: 'Credentials', href: '/credentials' },
-  { text: 'About', href: '/about' },
-  { text: 'Products', href: '/products' },
-  { text: 'Contact', href: '/contact' },
-  { text: 'News', href: '/news' },
-]
+const data = {
+  image: { src: '/logos/logo.svg', alt: 'Eurotempest Logo' },
+  navLinks: [
+    { text: 'Home', href: '/' },
+    { text: 'Credentials', href: '/credentials' },
+    { text: 'About', href: '/about' },
+    { text: 'Products', href: '/products' },
+    { text: 'Contact', href: '/contact' },
+    { text: 'News', href: '/news' },
+  ],
+}
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,7 +44,7 @@ export default function Navbar() {
         <div className='container flex h-full items-center justify-between px-4 xl:px-10'>
           <div className='mx-4 w-70 opacity-80 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
-              <Image src='/logos/logo.svg' alt='Eurotempest Logo' className='text-light-300' width={827} height={44} />
+              <Image className='text-light-300' width={827} height={44} src={data.image.src} alt={data.image.alt} />
             </Link>
           </div>
           <div className='flex h-full w-fit items-center'>
@@ -73,7 +76,7 @@ export default function Navbar() {
               </button>
             </div>
             <div className='hidden h-full items-center lg:flex'>
-              {data.map((link, index) => (
+              {data.navLinks.map((link, index) => (
                 <DesktopNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
                   {link.text}
                 </DesktopNavLink>
@@ -88,7 +91,7 @@ export default function Navbar() {
         }`}
         ref={menuRef}
       >
-        {data.map((link, index) => (
+        {data.navLinks.map((link, index) => (
           <MobileNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
             {link.text}
           </MobileNavLink>

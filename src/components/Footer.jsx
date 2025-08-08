@@ -32,6 +32,7 @@ const data = {
     },
   ],
   copyright: '© 2025 Eurotempest. All rights reserved.',
+  image: { src: '/logos/logo-alt.svg', alt: 'Eurotempest logo' },
 }
 
 export default function Footer() {
@@ -47,11 +48,11 @@ export default function Footer() {
         <div className='via-light-300/50 my-8 h-0.5 w-lg max-w-full rounded-3xl bg-gradient-to-r from-transparent to-transparent md:w-xl lg:w-3xl'></div>
         <p className='text-light-500 mb-2 text-center'>{data.copyright}</p>
         <Image
-          src='/logos/logo-alt.svg'
-          alt='Eurotempest Logo'
           className='text-light-300 right-0 bottom-0 m-8 w-30 md:absolute md:w-12'
           width={115}
           height={150}
+          src={data.image.src}
+          alt={data.image.alt}
         />
       </div>
     </footer>

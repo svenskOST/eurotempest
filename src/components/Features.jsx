@@ -1,36 +1,27 @@
-// Checkmark icon for the list items
-import Image from 'next/image'
-import { IoCheckmarkCircle } from 'react-icons/io5'
+import SectionTitle from './ui/SectionTitle'
+import FeatureSection from './ui/FeatureSection'
 
 const data = {
-  title: 'We Are Experts at What We Do',
-  list: [
-    'Entrusted by over 300 organizations',
-    'Supplying defense and government authorities in over 30 countries',
-    'Market leader in Europe',
-    'Rigid testing and quality assurance in dedicated labs',
-    'Secure products for all your needs',
-    'Living up to NATO standards',
+  title: 'Expertise You Can Trust',
+  sections: [
+    {
+      list: ['Supplying defence and government in over 30 countries', 'Entrusted by over 300 organizations', 'Market leader in Europe'],
+      image: { src: '/images/earth.jpg', alt: 'Earth seen from space' },
+    },
+    {
+      list: ['Rigid testing and quality assurance in dedicated labs', 'Secure products for all your needs', 'Living up to NATO standards'],
+      image: { src: '/images/earth.jpg', alt: 'Earth seen from space' },
+    },
   ],
 }
 
 export default function Features() {
   return (
     <div className='bg-light-300 flex h-screen flex-col items-center justify-center'>
-      <h1>{data.title}</h1>
-      <div>
-        {/*List on the left and image on the right, first half of list */}
-        <ul className='list-disc'>
-          {data.list.map((item, index) => (
-            <li key={index}>
-              <IoCheckmarkCircle />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <Image src='/images/feature.png' alt='Feature' width={500} height={500} />
-      </div>
-      <div>{/* Image on the left and list on the right, second half of list */}</div>
+      <SectionTitle title={data.title} />
+      {data.sections.map((section, index) => (
+        <FeatureSection key={index} list={section.list} image={section.image} />
+      ))}
     </div>
   )
 }
