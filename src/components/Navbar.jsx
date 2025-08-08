@@ -3,7 +3,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
-import { navLinks } from '../data/layout.json'
+
+const data = [
+  { text: 'Home', href: '/' },
+  { text: 'Credentials', href: '/credentials' },
+  { text: 'About', href: '/about' },
+  { text: 'Products', href: '/products' },
+  { text: 'Contact', href: '/contact' },
+  { text: 'News', href: '/news' },
+]
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -65,7 +73,7 @@ export default function Navbar() {
               </button>
             </div>
             <div className='hidden h-full items-center lg:flex'>
-              {navLinks.map((link, index) => (
+              {data.map((link, index) => (
                 <DesktopNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
                   {link.text}
                 </DesktopNavLink>
@@ -80,7 +88,7 @@ export default function Navbar() {
         }`}
         ref={menuRef}
       >
-        {navLinks.map((link, index) => (
+        {data.map((link, index) => (
           <MobileNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
             {link.text}
           </MobileNavLink>

@@ -1,10 +1,10 @@
 import '../theme.css'
-import Layout from '../layouts/RootLayout'
+import RootLayout from '../components/RootLayout'
 
 export default function App({ Component, pageProps }) {
   return (
-    <Layout>
+    <RootLayout>
       <Component {...pageProps} />
-    </Layout>
+    </RootLayout>
   )
 }

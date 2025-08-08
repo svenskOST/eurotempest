@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { Montserrat, Inter } from 'next/font/google'
 import TailwindScreenSize from '@svenskost/tailwind-screen-size'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
 const display = Montserrat({
   subsets: ['latin'],
@@ -16,7 +16,7 @@ const body = Inter({
   variable: '--font-body',
 })
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <>
       <Head>
