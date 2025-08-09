@@ -13,7 +13,7 @@ import CarouselCard from './ui/CarouselCard'
 import SectionTitle from './ui/SectionTitle'
 
 const data = {
-  title: 'Why Eurotempest?',
+  title: 'Why Choose Eurotempest?',
   cards: [
     {
       icon: FaBuildingLock,

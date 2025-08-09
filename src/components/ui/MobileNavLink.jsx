@@ -23,7 +23,7 @@ export default function MobileNavLink({ href, setIsMenuOpen, children }) {
   return (
     <>
       <a
-        className={`relative flex items-center justify-center h-full px-18" py-3 transition-colors duration-300 weight-500 font-display hover:text-primary-300/90 ${
+        className={`relative flex items-center justify-center h-full px-18 py-3 transition-colors duration-300 weight-500 font-display hover:text-primary-300/90 ${
           isActive(href) ? 'text-light-600' : 'text-light-400'
         }`}
         href={href}
@@ -31,7 +31,7 @@ export default function MobileNavLink({ href, setIsMenuOpen, children }) {
         aria-busy={isNavigating}
       >
         {isNavigating ? (
-          <div className='flex  w-full h-[45px] items-center justify-center'>
+          <div className='flex w-full h-[45px] items-center justify-center'>
             <span className='w-6 h-6 rounded-full border-3 border-primary-300/80 border-t-primary-300/20 animate-spin'></span>
           </div>
         ) : (
