@@ -2,12 +2,12 @@ import Image from 'next/image'
 import { IoCheckmarkCircle } from 'react-icons/io5'
 
 export default function FeatureSection({ reverse, list, image }) {
-  return (
-    <div className={`flex ${reverse && 'flex-row-reverse'} container`}>
+  return ( 
+    <div className={`container flex ${reverse && 'flex-row-reverse'}`}>
       <ul className='w-1/2 list-none'>
         {list.map((item, index) => (
           <li key={index}>
-            <IoCheckmarkCircle className='inline text-primary-700 size-6' />
+            <IoCheckmarkCircle className='inline size-6 text-primary-700' />
             {item}
           </li>
         ))}

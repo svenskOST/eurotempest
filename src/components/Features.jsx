@@ -21,7 +21,7 @@ export default function Features() {
     <Section>
       <SectionTitle title={data.title} />
       {data.sections.map((section, index) => (
-        <FeatureSection key={index} reverse={index % 2 == 0 ? true : false} list={section.list} image={section.image} />
+        <FeatureSection reverse={index % 2 == 0 ? true : false} list={section.list} image={section.image} key={index} />
       ))}
     </Section>
   )

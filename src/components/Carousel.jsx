@@ -94,7 +94,7 @@ export default function Carousel() {
   return (
     <Section>
       <SectionTitle title={data.title} />
-      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='' options={options}>
+      <Splide hasTrack={false} options={options} aria-label='Why Eurotempest?'>
         <SplideTrack>
           {data.cards.map((card, index) => (
             <CarouselCard

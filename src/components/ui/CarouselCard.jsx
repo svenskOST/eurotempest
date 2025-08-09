@@ -7,7 +7,7 @@ export default function CarouselCard({ icon: Icon, title, description, button })
         <div className='flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-primary-50 text-primary-600'>
           {<Icon className='w-8 h-8' />}
         </div>
-        <h3 className='mb-2 text-xl font-semibold text-dark-800'>{title}</h3>
+        <h3 className='mb-2 text-xl font-semibold text-dark-700'>{title}</h3>
         <p className='flex-grow text-dark-600'>{description}</p>
         {button}
       </div>

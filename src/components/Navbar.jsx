@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 flex items-center justify-around w-full raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-800/75 shadow-dark-900 z-100 h-18 bg-gradient-to-r backdrop-blur-sm'>
+      <nav className='fixed top-0 flex items-center justify-around w-full h-18 z-100 bg-gradient-to-r backdrop-blur-sm raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-800/75 shadow-dark-900'>
         <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
           <div className='mx-4 w-70 opacity-80 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
@@ -50,9 +50,9 @@ export default function Navbar() {
           <div className='flex items-center h-full w-fit'>
             <div className='relative lg:hidden'>
               <button
+                className='flex items-center justify-center h-12 transition-colors duration-300 rounded-md cursor-pointer w-14 text-light-300 hover:bg-primary-300/50'
                 ref={buttonRef}
                 onClick={toggleMenu}
-                className='flex items-center justify-center h-12 transition-colors duration-300 rounded-md cursor-pointer text-light-300 hover:bg-primary-300/50 w-14'
                 aria-label='Toggle menu'
                 aria-expanded={isMenuOpen}
               >
@@ -77,7 +77,7 @@ export default function Navbar() {
             </div>
             <div className='items-center hidden h-full lg:flex'>
               {data.navLinks.map((link, index) => (
-                <DesktopNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
+                <DesktopNavLink href={link.href} setIsMenuOpen={setIsMenuOpen} key={index}>
                   {link.text}
                 </DesktopNavLink>
               ))}
@@ -86,13 +86,13 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`fixed left-0 z-50 flex flex-col items-center w-full pt-24 pb-16 transition-all duration-300 ease-in-out transform raised-700 text-600 bg-dark-600 lg:hidden ${
+        className={`fixed left-0 z-50 flex flex-col items-center w-full pt-24 pb-14 transition-all duration-300 ease-in-out transform raised-700 text-600 bg-dark-600 lg:hidden ${
           isMenuOpen ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-20 opacity-0'
         }`}
         ref={menuRef}
       >
         {data.navLinks.map((link, index) => (
-          <MobileNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
+          <MobileNavLink href={link.href} setIsMenuOpen={setIsMenuOpen} key={index}>
             {link.text}
           </MobileNavLink>
         ))}
