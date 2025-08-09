@@ -8,7 +8,7 @@ const data = {
   image: { src: '/images/dark-keyboard.jpg', alt: 'Cybersecurity' },
   titles: ['How visible is your data?', 'TEMPEST-certified products', 'Secure solutions for government and defence'],
   description:
-    'Protect your information- and communication systems from unauthorized interception. Our TEMPEST-certified products ensure no emanations are leaked.',
+    'We are the leading provider of TEMPEST-certified products, ensuring the highest level of security for sensitive information. Our solutions are designed to protect against electromagnetic eavesdropping and other advanced threats.',
   buttons: [
     {
       text: 'Explore Products',
@@ -27,8 +27,8 @@ const data = {
 
 export default function Hero() {
   return (
-    <section className='flex justify-center min-h-screen bg-light-300 lg:min-h-0'>
-      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
+    <section className='flex justify-center min-h-screen bg-light-300 lg:min-h-0 mb-30'>
+      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-3/2 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
         <Image
           className='object-cover object-center raised-500 lg:raised-700 xl:rounded-b-4xl'
           fill

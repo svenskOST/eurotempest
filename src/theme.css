@@ -4,7 +4,10 @@
   --color-primary-300: #e7000b; /*red-600*/
   --color-primary-700: #9f0712; /*red-800*/
 
+  --color-secondary-700: #1c398e; /*blue-900*/
+
   --color-light-100: #ffffff; /*white*/
+  --color-light-200: #f4f4f5; /*zinc-100*/
   --color-light-300: #e5e7eb; /*gray-200*/
   --color-light-400: #d1d5dc; /*gray-300*/
   --color-light-500: #99a1af; /*gray-400*/

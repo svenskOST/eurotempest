@@ -1,4 +1,3 @@
-import { Splide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 import { BsQuestionCircleFill } from 'react-icons/bs'
 import { FaInfoCircle } from 'react-icons/fa'
@@ -62,56 +61,26 @@ const data = {
   ],
 }
 
-const options = {
-  type: 'loop',
-  perPage: 2.5,
-  perMove: 1,
-  gap: '2rem',
-  padding: { left: '5%', right: '5%' },
-  focus: 'center',
-  updateOnMove: true,
-  pagination: false,
-  arrows: false,
-  drag: 'free',
-  snap: true,
-  breakpoints: {
-    1024: {
-      perPage: 2,
-      padding: { left: '10%', right: '10%' },
-    },
-    768: {
-      perPage: 1.5,
-      padding: { left: '15%', right: '15%' },
-    },
-    640: {
-      perPage: 1,
-      padding: { left: '10%', right: '10%' },
-    },
-  },
-}
-
 export default function Carousel() {
   return (
     <Section>
       <SectionTitle title={data.title} />
-      <Splide hasTrack={false} options={options} aria-label='Why Eurotempest?'>
-        <SplideTrack>
-          {data.cards.map((card, index) => (
-            <CarouselCard
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-              button={
-                <Button href={card.button.href} type={card.button.type}>
-                  {card.button.text}
-                  {<card.button.icon className='size-6 lg:size-8' />}
-                </Button>
-              }
-            />
-          ))}
-        </SplideTrack>
-      </Splide>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:max-lg:gap-8 gap-16 place-items-center'>
+        {data.cards.map((card, index) => (
+          <CarouselCard
+            key={index}
+            icon={card.icon}
+            title={card.title}
+            description={card.description}
+            button={
+              <Button href={card.button.href} type={card.button.type}>
+                {card.button.text}
+                {<card.button.icon className='size-6 lg:size-8' />}
+              </Button>
+            }
+          />
+        ))}
+      </div>
     </Section>
   )
 }
