@@ -55,32 +55,32 @@ const data = {
 
 export default function Credentials() {
   return (
-    <div className='from-light-200 to-light-100 min-h-screen bg-gradient-to-b px-4 py-12 sm:px-6 lg:px-8'>
+    <div className='min-h-screen px-4 py-12 from-light-200 to-light-100 bg-gradient-to-b sm:px-6 lg:px-8'>
       <div className='mx-auto max-w-7xl'>
         {/* Header Section */}
         <div className='mb-12 text-center'>
-          <h1 className='font-display text-dark-800 mb-4 text-4xl font-bold md:text-5xl'>{data.title}</h1>
-          <p className='text-dark-600 mx-auto max-w-3xl text-lg'>{data.description}</p>
+          <h1 className='mb-4 text-4xl font-bold font-display text-dark-800 md:text-5xl'>{data.title}</h1>
+          <p className='max-w-3xl mx-auto text-lg text-dark-600'>{data.description}</p>
         </div>
 
         {/* Mobile View - Card Layout */}
         <div className='space-y-6 md:hidden'>
           {data.table.rows.map((row, index) => (
-            <div key={index} className='overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-lg'>
+            <div key={index} className='overflow-hidden transition-shadow duration-300 bg-white shadow-md rounded-xl hover:shadow-lg'>
               <div className='p-6'>
-                <div className='mb-4 flex items-center space-x-4'>
+                <div className='flex items-center mb-4 space-x-4'>
                   <div className='flex-shrink-0'>
                     <Image src={row.logo} alt={row.name} width={60} height={60} className='rounded-lg' />
                   </div>
                   <div>
-                    <h3 className='text-dark-800 text-lg font-semibold'>{row.name}</h3>
+                    <h3 className='text-lg font-semibold text-dark-800'>{row.name}</h3>
                     <p className='text-dark-600'>{row.authority}</p>
                   </div>
                 </div>
 
                 <div className='mt-4 space-y-2'>
                   <div>
-                    <span className='text-dark-700 font-medium'>Certificate:</span>
+                    <span className='font-medium text-dark-700'>Certificate:</span>
                     <p className='text-dark-600'>{row.certificate}</p>
                   </div>
 
@@ -90,11 +90,11 @@ export default function Credentials() {
                         href={row.link}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='text-primary-600 hover:text-primary-700 inline-flex items-center font-medium transition-colors'
+                        className='inline-flex items-center font-medium transition-colors text-primary-600 hover:text-primary-700'
                       >
                         View Certificate
                         <svg
-                          className='ml-1 h-4 w-4'
+                          className='w-4 h-4 ml-1'
                           fill='none'
                           stroke='currentColor'
                           viewBox='0 0 24 24'
@@ -117,38 +117,38 @@ export default function Credentials() {
         </div>
 
         {/* Desktop View - Table */}
-        <div className='hidden overflow-hidden rounded-xl bg-white shadow-md md:block'>
+        <div className='hidden overflow-hidden bg-white shadow-md rounded-xl md:block'>
           <div className='overflow-x-auto'>
             <table className='min-w-full divide-y divide-gray-200'>
               <thead className='bg-gray-50'>
                 <tr>
-                  <th scope='col' className='px-6 py-4 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'>
+                  <th scope='col' className='px-6 py-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'>
                     Logo
                   </th>
-                  <th scope='col' className='px-6 py-4 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'>
+                  <th scope='col' className='px-6 py-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'>
                     Authority
                   </th>
-                  <th scope='col' className='px-6 py-4 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'>
+                  <th scope='col' className='px-6 py-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'>
                     Name
                   </th>
-                  <th scope='col' className='px-6 py-4 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'>
+                  <th scope='col' className='px-6 py-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'>
                     Certificate
                   </th>
-                  <th scope='col' className='px-6 py-4 text-left text-xs font-medium tracking-wider text-gray-500 uppercase'>
+                  <th scope='col' className='px-6 py-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'>
                     Link
                   </th>
                 </tr>
               </thead>
-              <tbody className='divide-y divide-gray-200 bg-white'>
+              <tbody className='bg-white divide-y divide-gray-200'>
                 {data.table.rows.map((row, index) => (
                   <tr key={index} className='transition-colors hover:bg-gray-50'>
                     <td className='px-6 py-4 whitespace-nowrap'>
-                      <div className='h-10 w-10 flex-shrink-0'>
+                      <div className='flex-shrink-0 w-10 h-10'>
                         <Image src={row.logo} alt={row.name} width={40} height={40} className='rounded-md' />
                       </div>
                     </td>
-                    <td className='px-6 py-4 text-sm whitespace-nowrap text-gray-900'>{row.authority}</td>
-                    <td className='px-6 py-4 text-sm font-medium whitespace-nowrap text-gray-900'>{row.name}</td>
+                    <td className='px-6 py-4 text-sm text-gray-900 whitespace-nowrap'>{row.authority}</td>
+                    <td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>{row.name}</td>
                     <td className='px-6 py-4 text-sm text-gray-500'>{row.certificate}</td>
                     <td className='px-6 py-4 text-sm whitespace-nowrap'>
                       {row.link ? (
@@ -156,11 +156,11 @@ export default function Credentials() {
                           href={row.link}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='text-primary-600 hover:text-primary-700 flex items-center font-medium'
+                          className='flex items-center font-medium text-primary-600 hover:text-primary-700'
                         >
                           View
                           <svg
-                            className='ml-1 h-4 w-4'
+                            className='w-4 h-4 ml-1'
                             fill='none'
                             stroke='currentColor'
                             viewBox='0 0 24 24'

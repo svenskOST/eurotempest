@@ -1,5 +1,6 @@
 import { Splide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
+import Section from './Section'
 import SectionTitle from './ui/SectionTitle'
 import CarouselCard from './ui/CarouselCard'
 import Button from './ui/Button'
@@ -10,7 +11,6 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { RiServiceFill } from 'react-icons/ri'
 import { PiCertificateFill } from 'react-icons/pi'
 import { BsQuestionCircleFill } from 'react-icons/bs'
-import Section from './Section'
 
 const data = {
   title: 'Why Eurotempest?',
@@ -94,7 +94,7 @@ export default function Carousel() {
   return (
     <Section>
       <SectionTitle title={data.title} />
-      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='w-full' options={options}>
+      <Splide aria-label='Why Eurotempest?' hasTrack={false} className='' options={options}>
         <SplideTrack>
           {data.cards.map((card, index) => (
             <CarouselCard

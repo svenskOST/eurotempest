@@ -3,12 +3,12 @@ import { SplideSlide } from '@splidejs/react-splide'
 export default function CarouselCard({ icon: Icon, title, description, button }) {
   return (
     <SplideSlide>
-      <div className='flex h-full flex-col items-center rounded-xl bg-white p-6 text-center shadow-md transition-shadow duration-300 hover:shadow-lg'>
-        <div className='bg-primary-50 text-primary-600 mb-4 flex h-16 w-16 items-center justify-center rounded-full'>
-          {<Icon className='h-8 w-8' />}
+      <div className='flex flex-col items-center h-full p-6 my-10 text-center bg-white rounded-lg'>
+        <div className='flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-primary-50 text-primary-600'>
+          {<Icon className='w-8 h-8' />}
         </div>
-        <h3 className='text-dark-800 mb-2 text-xl font-semibold'>{title}</h3>
-        <p className='text-dark-600 flex-grow'>{description}</p>
+        <h3 className='mb-2 text-xl font-semibold text-dark-800'>{title}</h3>
+        <p className='flex-grow text-dark-600'>{description}</p>
         {button}
       </div>
     </SplideSlide>

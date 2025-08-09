@@ -40,23 +40,23 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-800/75 shadow-dark-900 fixed top-0 z-100 flex h-18 w-full items-center justify-around bg-gradient-to-r backdrop-blur-xs'>
-        <div className='container flex h-full items-center justify-between px-4 xl:px-10'>
+      <nav className='fixed top-0 flex items-center justify-around w-full raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-800/75 shadow-dark-900 z-100 h-18 bg-gradient-to-r backdrop-blur-sm'>
+        <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
           <div className='mx-4 w-70 opacity-80 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
               <Image className='text-light-300' width={827} height={44} src={data.image.src} alt={data.image.alt} />
             </Link>
           </div>
-          <div className='flex h-full w-fit items-center'>
+          <div className='flex items-center h-full w-fit'>
             <div className='relative lg:hidden'>
               <button
                 ref={buttonRef}
                 onClick={toggleMenu}
-                className='text-light-300 hover:bg-primary-300/50 flex h-12 w-14 cursor-pointer items-center justify-center rounded-md transition-colors duration-300'
+                className='flex items-center justify-center h-12 transition-colors duration-300 rounded-md cursor-pointer text-light-300 hover:bg-primary-300/50 w-14'
                 aria-label='Toggle menu'
                 aria-expanded={isMenuOpen}
               >
-                <div className='relative flex h-full w-full items-center justify-center'>
+                <div className='relative flex items-center justify-center w-full h-full'>
                   <span
                     className={`absolute h-[3px] w-8 rounded-full bg-current transition-all duration-300 ${
                       isMenuOpen ? 'translate-y-0 rotate-45' : '-translate-y-2.5'
@@ -75,7 +75,7 @@ export default function Navbar() {
                 </div>
               </button>
             </div>
-            <div className='hidden h-full items-center lg:flex'>
+            <div className='items-center hidden h-full lg:flex'>
               {data.navLinks.map((link, index) => (
                 <DesktopNavLink key={index} href={link.href} setIsMenuOpen={setIsMenuOpen}>
                   {link.text}
@@ -86,7 +86,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`raised-700 text-600 bg-dark-600 fixed left-0 z-50 flex w-full transform flex-col items-center pt-24 pb-16 transition-all duration-300 ease-in-out lg:hidden ${
+        className={`fixed left-0 z-50 flex flex-col items-center w-full pt-24 pb-16 transition-all duration-300 ease-in-out transform raised-700 text-600 bg-dark-600 lg:hidden ${
           isMenuOpen ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-20 opacity-0'
         }`}
         ref={menuRef}

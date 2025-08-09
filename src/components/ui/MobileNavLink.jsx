@@ -31,8 +31,8 @@ export default function MobileNavLink({ href, children, className, setIsMenuOpen
         aria-busy={isNavigating}
       >
         {isNavigating ? (
-          <div className='flex h-[54px] w-full items-center justify-center'>
-            <span className='border-primary-300/80 border-t-primary-300/20 h-6 w-6 animate-spin rounded-full border-3'></span>
+          <div className='flex h-[45px] w-full items-center justify-center'>
+            <span className='w-6 h-6 rounded-full border-primary-300/80 border-t-primary-300/20 animate-spin border-3'></span>
           </div>
         ) : (
           children

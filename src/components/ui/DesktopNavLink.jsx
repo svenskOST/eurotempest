@@ -29,11 +29,11 @@ export default function NavLink({ href, children, className, setIsMenuOpen }) {
       } ${className} group relative`}
       aria-busy={isNavigating}
     >
-      <div className='weight-500 text-200 xl:text-300 relative flex items-center justify-center'>
+      <div className='relative flex items-center justify-center weight-500 text-200 xl:text-300'>
         <span className='relative font-display'>
           {children}
           {isNavigating && (
-            <span className='border-primary-300/80 border-t-primary-300/20 absolute -right-7 h-5 w-5 translate-y-1 animate-spin rounded-full border-3'></span>
+            <span className='absolute w-5 h-5 translate-y-1 rounded-full border-primary-300/80 border-t-primary-300/20 -right-7 animate-spin border-3'></span>
           )}
         </span>
         <span className='bg-primary-300/90 absolute -bottom-1 left-0 h-[2px] w-0 transition-[width] duration-200 group-hover:w-full'></span>
