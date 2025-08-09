@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useRef, useState, createElement } from 'react'
 import { gsap } from 'gsap'
+import { createElement, useEffect, useRef, useState } from 'react'
 
 const TextType = ({
   text,
@@ -56,7 +56,7 @@ const TextType = ({
           }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     )
 
     observer.observe(containerRef.current)
@@ -111,7 +111,7 @@ const TextType = ({
               setDisplayedText(prev => prev + processedText[currentCharIndex])
               setCurrentCharIndex(prev => prev + 1)
             },
-            variableSpeed ? getRandomSpeed() : typingSpeed,
+            variableSpeed ? getRandomSpeed() : typingSpeed
           )
         } else if (textArray.length > 1) {
           timeout = setTimeout(() => {
@@ -162,7 +162,7 @@ const TextType = ({
       <span ref={cursorRef} className={`font-display ml-1 opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${cursorClassName}`}>
         {cursorCharacter}
       </span>
-    ),
+    )
   )
 }
 

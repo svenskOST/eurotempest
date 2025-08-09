@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
 
@@ -23,7 +23,12 @@ export default function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (menuRef.current && !menuRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         setIsMenuOpen(false)
       }
     }

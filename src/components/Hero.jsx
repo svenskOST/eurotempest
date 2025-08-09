@@ -1,8 +1,8 @@
 import Image from 'next/image'
+import { IoIosSend } from 'react-icons/io'
+import { IoArrowForwardCircle } from 'react-icons/io5'
 import TextType from './TextType'
 import Button from './ui/Button'
-import { IoArrowForwardCircle } from 'react-icons/io5'
-import { IoIosSend } from 'react-icons/io'
 
 const data = {
   image: { src: '/images/dark-keyboard.jpg', alt: 'Cybersecurity' },
@@ -53,7 +53,9 @@ export default function Hero() {
               className='mb-3 lg:text-700 text-500 sm:text-600 weight-700'
               cursorClassName='text-light-500 weight-500'
             />
-            <p className='lg:text-300 text-light-400 text-300 text-center leading-relaxed lg:w-[46rem] xl:text-start'>{data.description}</p>
+            <p className='lg:text-300 text-light-400 text-300 text-center leading-relaxed lg:w-[46rem] xl:text-start'>
+              {data.description}
+            </p>
           </div>
           <div className='flex flex-wrap items-center justify-center w-full gap-4 md:gap-6 lg:gap-8 xl:justify-start'>
             {data.buttons.map((btn, index) => (
