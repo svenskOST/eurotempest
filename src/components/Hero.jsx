@@ -28,7 +28,7 @@ const data = {
 export default function Hero() {
   return (
     <section className='flex justify-center min-h-screen bg-light-300 lg:min-h-0 mb-30'>
-      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-3/2 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
+      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
         <Image
           className='object-cover object-center raised-500 lg:raised-700 xl:rounded-b-4xl'
           fill
@@ -53,7 +53,7 @@ export default function Hero() {
               className='mb-3 lg:text-700 text-500 sm:text-600 weight-700'
               cursorClassName='text-light-500 weight-500'
             />
-            <p className='lg:text-300 text-light-400 text-300 text-center leading-relaxed lg:w-[46rem] xl:text-start'>
+            <p className='lg:text-300 text-light-300 text-300 text-center leading-relaxed lg:w-[46rem] xl:text-start'>
               {data.description}
             </p>
           </div>
