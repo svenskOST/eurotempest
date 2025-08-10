@@ -27,10 +27,10 @@ const data = {
 
 export default function Hero() {
   return (
-    <section className='flex justify-center min-h-screen bg-light-300 lg:min-h-0 mb-30'>
+    <section className='flex justify-center min-h-screen lg:min-h-0 mb-10 md:mb-30'>
       <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-2/1 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
         <Image
-          className='object-cover object-center raised-500 lg:raised-700 xl:rounded-b-4xl'
+          className='object-cover object-center shadow-[0_4px_6px_hsla(0,0%,0%,0.5)] lg:shadow-[0_6px_8px_hsla(0,0%,0%,0.5)] xl:rounded-b-4xl'
           fill
           src={data.image.src}
           alt={data.image.alt}

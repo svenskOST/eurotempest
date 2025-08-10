@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className='fixed top-0 flex items-center justify-around w-full h-18 z-100 bg-gradient-to-r backdrop-blur-sm raised-500 bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-700/75 shadow-dark-900'>
+      <nav className='fixed top-0 flex items-center justify-around w-full h-18 z-100 bg-gradient-to-r backdrop-blur-sm shadow-[0_4px_6px_hsla(0,0%,0%,0.5)] bg-dark-900/70 from-dark-700/75 via-primary-700/25 to-dark-700/75'>
         <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
           <div className='mx-2 w-70 opacity-80 md:mx-4 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
@@ -91,7 +91,7 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`fixed left-0 z-50 flex flex-col items-center w-full pt-24 pb-14 transition-all duration-300 ease-in-out transform raised-700 text-600 bg-dark-600 lg:hidden ${
+        className={`fixed left-0 z-50 flex flex-col items-center w-full pt-24 pb-14 transition-all duration-300 ease-in-out transform shadow-[0_6px_8px_hsla(0,0%,0%,0.5)] text-600 bg-dark-600 lg:hidden ${
           isMenuOpen ? 'visible translate-y-0 opacity-100' : 'pointer-events-none invisible -translate-y-20 opacity-0'
         }`}
         ref={menuRef}

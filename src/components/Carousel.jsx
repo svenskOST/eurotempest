@@ -22,7 +22,6 @@ const data = {
         text: 'Learn More',
         icon: FaInfoCircle,
         href: '/products',
-        type: 'primary',
       },
     },
     {
@@ -33,7 +32,6 @@ const data = {
         text: 'Find Out Why',
         icon: BsQuestionCircleFill,
         href: '/about',
-        type: 'primary',
       },
     },
     {
@@ -44,7 +42,6 @@ const data = {
         text: 'See Certificates',
         icon: PiCertificateFill,
         href: '/credentials',
-        type: 'primary',
       },
     },
     {
@@ -55,7 +52,6 @@ const data = {
         text: "Let's Talk",
         icon: MdQuestionAnswer,
         href: '/contact',
-        type: 'primary',
       },
     },
   ],
@@ -73,7 +69,7 @@ export default function Carousel() {
             title={card.title}
             description={card.description}
             button={
-              <Button href={card.button.href} type={card.button.type}>
+              <Button href={card.button.href} type='secondary'>
                 {card.button.text}
                 {<card.button.icon className='size-6 lg:size-8' />}
               </Button>

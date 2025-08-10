@@ -55,7 +55,7 @@ const data = {
 
 export default function Credentials() {
   return (
-    <div className='min-h-screen px-4 py-12 from-light-200 to-light-100 bg-gradient-to-b sm:px-6 lg:px-8'>
+    <div className='min-h-screen px-4 py-12 sm:px-6 lg:px-8'>
       <div className='mx-auto max-w-7xl'>
         {/* Header Section */}
         <div className='mb-12 text-center'>

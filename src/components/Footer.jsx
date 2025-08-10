@@ -37,7 +37,7 @@ const data = {
 
 export default function Footer() {
   return (
-    <footer className='relative w-full -raised-500 bg-dark-600 mt-30'>
+    <footer className='relative w-full shadow-[0_-4px_6px_hsla(0,0%,0%,0.5)] bg-dark-600 mt-30'>
       <div className='absolute inset-0 bg-gradient-to-r from-dark-700 via-dark-600 to-dark-700'></div>
       <div className='relative flex flex-col items-center justify-center w-full p-4'>
         <div className='container flex flex-col items-center justify-around mt-6 md:flex-row md:items-start'>

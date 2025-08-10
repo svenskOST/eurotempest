@@ -45,46 +45,6 @@
   font-weight: --value(--weight-*);
 }
 
-@utility raised-100 {
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility raised-300 {
-  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility raised-500 {
-  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility raised-700 {
-  box-shadow: 0 6px 8px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility raised-900 {
-  box-shadow: 0 8px 10px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility -raised-100 {
-  box-shadow: 0 -1px 2px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility -raised-300 {
-  box-shadow: 0 -2px 4px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility -raised-500 {
-  box-shadow: 0 -4px 6px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility -raised-700 {
-  box-shadow: 0 -6px 8px hsla(0, 0%, 0%, 0.5);
-}
-
-@utility -raised-900 {
-  box-shadow: 0 -8px 10px hsla(0, 90%, 44%, 1);
-}
-
 @layer base {
   * {
     @apply font-body;
