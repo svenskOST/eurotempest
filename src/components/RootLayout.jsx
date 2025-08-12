@@ -57,10 +57,10 @@ export default function RootLayout({ children }) {
         <link rel='canonical' href='https://eurotempest.net/' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={display.variable + ' ' + body.variable + ' ' + 'bg-light-300 min-h-screen'}>
+      <div className={display.variable + ' ' + body.variable}>
         <TailwindScreenSize />
         <Navbar />
-        <main>{children}</main>
+        <main className='bg-light-300 min-h-screen'>{children}</main>
         <Footer />
       </div>
     </>

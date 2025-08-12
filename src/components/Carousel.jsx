@@ -17,7 +17,7 @@ const data = {
     {
       icon: FaBuildingLock,
       title: 'Protect Your Operations',
-      description: 'Consumer electronics radiate signals that are prone to hostile surveillance. Ours do not.',
+      description: 'All IT equipment needs specialist shielding to eliminate the threat of covert eavesdropping. We\'ve got you covered.',
       button: {
         text: 'Learn More',
         icon: FaInfoCircle,
@@ -27,7 +27,7 @@ const data = {
     {
       icon: MdLeaderboard,
       title: 'Trusted Leader in Europe',
-      description: 'Eurotempest has been the number one TEMPEST-supplier in Europe since 2004.',
+      description: 'Eurotempest has been the number one TEMPEST-supplier in Europe since 2014.',
       button: {
         text: 'Find Out Why',
         icon: BsQuestionCircleFill,
