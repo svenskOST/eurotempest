@@ -45,6 +45,12 @@
   font-weight: --value(--weight-*);
 }
 
+@layer components {
+  .fade-in-out {
+    @apply before:content-[""] before:absolute before:inset-0 before:w-full before:z-10 before:bg-[linear-gradient(to_right,var(--color-light-300)_0%,transparent_10%,transparent_90%,var(--color-light-300)_100%)];
+  }
+}
+
 @layer base {
   * {
     @apply font-body;
