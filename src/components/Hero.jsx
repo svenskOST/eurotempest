@@ -28,7 +28,7 @@ const data = {
 export default function Hero() {
   return (
     <section className='flex justify-center min-h-screen lg:min-h-0 mb-30 md:mb-60'>
-      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-3/2 lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
+      <div className='absolute flex items-center justify-center w-full h-screen lg:relative lg:aspect-3/2 xl:aspect-16/9 xl:max-h-[90vh] lg:h-fit xl:container xl:w-9/10 xl:items-end xl:justify-start xl:p-20'>
         <Image
           className='object-cover object-center shadow-[0_4px_6px_hsla(0,0%,0%,0.5)] lg:shadow-[0_6px_8px_hsla(0,0%,0%,0.5)] xl:rounded-b-4xl'
           fill
