@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { IoLogoRss } from 'react-icons/io'
 import FooterSection from './ui/FooterSection'
 
 const data = {
@@ -31,7 +31,7 @@ const data = {
       ],
     },
   ],
-  copyright: '© 2025 Eurotempest. All rights reserved.',
+  copyright: '© 2025 Cybersafe. All rights reserved.',
   image: { src: '/logos/logo-alt.svg', alt: 'Eurotempest logo' },
 }
 
@@ -47,13 +47,10 @@ export default function Footer() {
         </div>
         <div className='w-lg h-0.5 max-w-full my-8 rounded-3xl bg-gradient-to-r from-transparent via-light-300/50 to-transparent md:w-xl lg:w-3xl'></div>
         <p className='mb-2 text-center text-light-500'>{data.copyright}</p>
-        <Image
-          className='bottom-0 right-0 m-8 w-30 text-light-300 md:absolute md:w-12'
-          width={115}
-          height={150}
-          src={data.image.src}
-          alt={data.image.alt}
-        />
+        <div className='bottom-0 right-0 m-8 w-30 text-light-300 md:absolute md:w-12'>
+          <IoLogoRss />
+          <div>Cybersafe</div>
+        </div>
       </div>
     </footer>
   )

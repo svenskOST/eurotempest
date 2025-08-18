@@ -1,11 +1,10 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { IoLogoRss } from 'react-icons/io'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
 
 const data = {
-  image: { src: '/logos/logo.svg', alt: 'Eurotempest Logo' },
   navLinks: [
     { text: 'Home', href: '/' },
     { text: 'Credentials', href: '/credentials' },
@@ -49,7 +48,10 @@ export default function Navbar() {
         <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
           <div className='mx-2 w-70 opacity-80 md:mx-4 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
-              <Image className='text-light-300' width={827} height={44} src={data.image.src} alt={data.image.alt} />
+              <div className='text-light-300'>
+                <IoLogoRss />
+                <div>Cybersafe</div>
+              </div>
             </Link>
           </div>
           <div className='flex items-center h-full w-fit'>
