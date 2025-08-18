@@ -69,7 +69,7 @@ export default function Carousel() {
             title={card.title}
             description={card.description}
             button={
-              <Button href={card.button.href} type='card'>
+              <Button href={card.button.href} type='secondary'>
                 {card.button.text}
                 {<card.button.icon className='size-6 lg:size-8' />}
               </Button>
