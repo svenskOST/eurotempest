@@ -23,7 +23,7 @@ export default function SocialProof() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className='absolute h-full whitespace-nowrap animate-[scroll_3s_linear_both_infinite]'>
+        <div className='absolute h-full whitespace-nowrap animate-[scroll_60s_linear_both_infinite]'>
           {data.logos.map((logo, index) => (
             <Image
               className='grayscale h-full w-fit inline-block mx-14'

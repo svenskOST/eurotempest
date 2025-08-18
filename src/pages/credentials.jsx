@@ -58,9 +58,9 @@ export default function Credentials() {
     <div className='min-h-screen px-4 py-12 sm:px-6 lg:px-8'>
       <div className='mx-auto max-w-7xl'>
         {/* Header Section */}
-        <div className='mb-12 text-center'>
+        <div className='mb-12 mt-30 ml-2'>
           <h1 className='mb-4 text-4xl font-bold font-display text-dark-800 md:text-5xl'>{data.title}</h1>
-          <p className='max-w-3xl mx-auto text-lg text-dark-600'>{data.description}</p>
+          <p className='max-w-3xl text-lg text-dark-600'>{data.description}</p>
         </div>
 
         {/* Mobile View - Card Layout */}
