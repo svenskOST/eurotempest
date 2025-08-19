@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className={display.variable + ' ' + body.variable}>
-   
+        <TailwindScreenSize />
         <Navbar />
         <main className='bg-light-300 min-h-screen'>{children}</main>
         <Footer />

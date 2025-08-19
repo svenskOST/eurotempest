@@ -47,9 +47,9 @@ export default function Footer() {
         </div>
         <div className='w-lg h-0.5 max-w-full my-8 rounded-3xl bg-gradient-to-r from-transparent via-light-300/50 to-transparent md:w-xl lg:w-3xl'></div>
         <p className='mb-2 text-center text-light-500'>{data.copyright}</p>
-        <div className='bottom-0 right-0 m-8 w-30 text-light-300 md:absolute md:w-12'>
-          <IoLogoRss />
-          <div>Cybersafe</div>
+        <div className='bottom-0 right-0 m-8 text-600 xl:absolute font-display flex items-center gap-2 weight-600 text-light-300'>
+          <IoLogoRss className='text-primary-300' />
+          <div className='font-display weight-600 text-light-300'>cybersafe</div>
         </div>
       </div>
     </footer>

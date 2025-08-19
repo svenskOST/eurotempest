@@ -4,16 +4,14 @@ import { IoLogoRss } from 'react-icons/io'
 import DesktopNavLink from './ui/DesktopNavLink'
 import MobileNavLink from './ui/MobileNavLink'
 
-const data = {
-  navLinks: [
-    { text: 'Home', href: '/' },
-    { text: 'Credentials', href: '/credentials' },
-    { text: 'About', href: '/about' },
-    { text: 'Products', href: '/products' },
-    { text: 'Contact', href: '/contact' },
-    { text: 'News', href: '/news' },
-  ],
-}
+const data = [
+  { text: 'Home', href: '/' },
+  { text: 'Credentials', href: '/credentials' },
+  { text: 'About', href: '/about' },
+  { text: 'Products', href: '/products' },
+  { text: 'Contact', href: '/contact' },
+  { text: 'News', href: '/news' },
+]
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,9 +46,9 @@ export default function Navbar() {
         <div className='container flex items-center justify-between h-full px-4 xl:px-10'>
           <div className='mx-2 w-70 opacity-80 md:mx-4 lg:w-60'>
             <Link href='/' onClick={() => setIsMenuOpen(false)}>
-              <div className='text-light-300'>
-                <IoLogoRss />
-                <div>Cybersafe</div>
+              <div className='flex items-center gap-2 text-600'>
+                <IoLogoRss className='text-primary-300' />
+                <div className='font-display weight-600 text-light-300'>cybersafe</div>
               </div>
             </Link>
           </div>
@@ -83,7 +81,7 @@ export default function Navbar() {
               </button>
             </div>
             <div className='items-center hidden h-full lg:flex'>
-              {data.navLinks.map((link, index) => (
+              {data.map((link, index) => (
                 <DesktopNavLink href={link.href} setIsMenuOpen={setIsMenuOpen} key={index}>
                   {link.text}
                 </DesktopNavLink>
@@ -98,7 +96,7 @@ export default function Navbar() {
         }`}
         ref={menuRef}
       >
-        {data.navLinks.map((link, index) => (
+        {data.map((link, index) => (
           <MobileNavLink href={link.href} setIsMenuOpen={setIsMenuOpen} key={index}>
             {link.text}
           </MobileNavLink>
